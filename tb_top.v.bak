@@ -1,0 +1,28 @@
+`timescale 1 ps / 1 ps
+module tb_top();
+
+reg i_clk; 
+reg i_iram_write, i_iram_read, i_dram_write, i_dram_read;
+reg [7:0] i_iram_addr, i_iram_data_in, i_dram_data_in;
+reg [15:0] i_dram_addr;
+wire [7:0] o_iram_data_out, o_dram_data_out;
+
+
+top DUT (.i_clk(i_clk), .i_iram_write(i_iram_write), .i_iram_read(i_iram_read), 
+			.i_iram_addr(i_iram_addr), .i_iram_data_in(i_iram_data_in), .i_dram_write(i_dram_write), 
+			.i_dram_read(i_dram_read), .i_dram_addr(i_dram_addr), .i_dram_data_in(i_dram_data_in), 
+						.o_iram_data_out(o_iram_data_out), .o_dram_data_out(o_dram_data_out));
+						
+always
+		#31.25 i_clk = ~i_clk; 
+		
+initial begin
+
+		i_clk <= 1'b0;
+
+#100000
+
+$finish;
+end
+						
+endmodule

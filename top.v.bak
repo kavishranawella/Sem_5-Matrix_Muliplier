@@ -1,0 +1,30 @@
+module top (i_clk, i_iram_write, i_iram_read, i_iram_addr, i_iram_data_in, 
+					i_dram_write, i_dram_read, i_dram_addr, i_dram_data_in, 
+						o_iram_data_out, o_dram_data_out);
+					
+input i_clk; 
+input i_iram_write, i_iram_read, i_iram_data_in, i_dram_write;
+input [7:0] i_iram_addr, i_iram_data_in, i_dram_data_in;
+input [15:0] i_dram_addr;
+output [7:0] o_iram_data_out, o_dram_data_out;
+
+
+wire [7:0] iram_addr_a, iram_data_in_a, iram_data_out_a, dram_data_in_a, dram_data_out_a;
+wire [15:0] dram_addr_a;
+wire iram_write_a, iram_read_a, dram_write_a, dram_read_a;
+
+DRAM dram1(.address_a(dram_addr_a), .address_b(i_dram_addr), .clock(i_clk), 
+				.data_a(dram_data_in_a), .data_b(i_dram_data_in), .rden_a(dram_read_a), 
+				.rden_b(i_dram_read), .wren_a(dram_write_a), .wren_b(i_dram_write),	
+				.q_a(dram_data_out_a),	.q_b(o_dram_data_out));
+	
+IRAM iram1(.address_a(iram_addr_a), .address_b(i_iram_addr), .clock(i_clk), 
+				.data_a(iram_data_in_a), .data_b(i_iram_data_in), .rden_a(iram_read_a), 
+				.rden_b(i_iram_read), .wren_a(iram_write_a), .wren_b(i_iram_write),	
+				.q_a(iram_data_out_a),	.q_b(o_iram_data_out));
+	
+core core1 (.i_clk(i_clk), .i_dram_in(dram_data_in_a), .i_iram_in(iram_data_in_a), 
+					.o_dram_addr(dram_addr_a), .o_dram_read(dram_read_a), 
+					.o_dram_write(dram_write_a), .o_dram_out(dram_data_out_a), 
+					.o_iram_addr(iram_addr_a), .o_iram_read(iram_read_a), 
+					.o_iram_write(iram_write_a), .o_iram_out(iram_data_out_a));

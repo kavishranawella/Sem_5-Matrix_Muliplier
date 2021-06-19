@@ -1,0 +1,55 @@
+module tb_mux();
+ 
+	reg [7:0] in0; 
+	reg [7:0] in1;
+	reg [7:0] in2;
+	reg [7:0] in3; 
+	reg [1:0] sel;
+	wire [7:0] out;
+ 
+	mux DUT (.in0(in0), .in1(in1), .in2(in2), .in3(in3), .sel(sel), .out(out));
+ 
+	initial begin
+		in0 = 8'b00000001;
+		in1 = 8'b00000010;
+		in2 = 8'b00000100;
+		in3 = 8'b00001000;
+		
+		#100	
+		sel = 2'b11;
+		#200
+		
+		sel = 2'b00;
+		#1
+		if (out == 8'b00000001)
+			$display("line 0 okay");
+		else 
+			$display("line 0 not working");
+		#100
+		
+		sel = 2'b01;
+		#1
+		if (out == 8'b00000010)
+			$display("line 1 okay");
+		else 
+			$display("line 1 not working");
+		#100
+		
+		sel = 2'b10;
+		if (out == 8'b00000100)
+			$display("line 2 okay");
+		else 
+			$display("line 2 not working new");
+		#100
+		
+		sel = 2'b11;
+		if (out == 8'b00001000)
+			$display("line 3 okay");
+		else 
+			$display("line 3 not working");
+		#100
+		    
+		$finish;
+	end
+ 
+endmodule
