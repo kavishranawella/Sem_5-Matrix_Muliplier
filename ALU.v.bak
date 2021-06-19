@@ -1,0 +1,19 @@
+module ALU(
+input[7:0] a,
+input[7:0] b,
+input[1:0] alu_control,
+output reg[15:0] result,
+output zero
+);
+
+always @(*)
+begin
+	case(alu_control)
+	1'b00: result= a*b; //multiplication
+	1'b01: result= a+b; //add
+	1'b10: result= a-b; //substract
+	endcase
+end 
+assign zero= (result==16'd0) ? 1'b1: 1'b0 //cond_expr ? true_expr : false_expr
+
+endmodule
