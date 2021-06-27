@@ -10,161 +10,171 @@
 # Copying D:/Installed_software/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+D:/Academics/Matrix_multiplier {D:/Academics/Matrix_multiplier/ALU.v}
+# vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/ALU.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:46:15 on Jun 14,2021
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/Matrix_multiplier" D:/Academics/Matrix_multiplier/ALU.v 
+# Start time: 04:48:34 on Jun 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier" D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/ALU.v 
 # -- Compiling module ALU
 # 
 # Top level modules:
 # 	ALU
-# End time: 13:46:15 on Jun 14,2021, Elapsed time: 0:00:00
+# End time: 04:48:34 on Jun 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+D:/Academics/Matrix_multiplier {D:/Academics/Matrix_multiplier/mux_16.v}
+# vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/decoder_4to16.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:46:15 on Jun 14,2021
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/Matrix_multiplier" D:/Academics/Matrix_multiplier/mux_16.v 
-# -- Compiling module mux_16
-# 
-# Top level modules:
-# 	mux_16
-# End time: 13:46:15 on Jun 14,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+D:/Academics/Matrix_multiplier {D:/Academics/Matrix_multiplier/decoder_4to16.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:46:15 on Jun 14,2021
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/Matrix_multiplier" D:/Academics/Matrix_multiplier/decoder_4to16.v 
+# Start time: 04:48:34 on Jun 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier" D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/decoder_4to16.v 
 # -- Compiling module decoder_4to16
 # 
 # Top level modules:
 # 	decoder_4to16
-# End time: 13:46:15 on Jun 14,2021, Elapsed time: 0:00:00
+# End time: 04:48:34 on Jun 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+D:/Academics/Matrix_multiplier {D:/Academics/Matrix_multiplier/reg16.v}
+# vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/reg16.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:46:15 on Jun 14,2021
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/Matrix_multiplier" D:/Academics/Matrix_multiplier/reg16.v 
+# Start time: 04:48:34 on Jun 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier" D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/reg16.v 
 # -- Compiling module reg16
 # 
 # Top level modules:
 # 	reg16
-# End time: 13:46:15 on Jun 14,2021, Elapsed time: 0:00:00
+# End time: 04:48:34 on Jun 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+D:/Academics/Matrix_multiplier {D:/Academics/Matrix_multiplier/reg8_inc.v}
+# vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/reg8_inc.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:46:15 on Jun 14,2021
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/Matrix_multiplier" D:/Academics/Matrix_multiplier/reg8_inc.v 
+# Start time: 04:48:34 on Jun 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier" D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/reg8_inc.v 
 # -- Compiling module reg8_inc
 # 
 # Top level modules:
 # 	reg8_inc
-# End time: 13:46:15 on Jun 14,2021, Elapsed time: 0:00:00
+# End time: 04:48:34 on Jun 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+D:/Academics/Matrix_multiplier {D:/Academics/Matrix_multiplier/reg16_inc.v}
+# vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/reg16_inc.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:46:15 on Jun 14,2021
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/Matrix_multiplier" D:/Academics/Matrix_multiplier/reg16_inc.v 
+# Start time: 04:48:34 on Jun 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier" D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/reg16_inc.v 
 # -- Compiling module reg16_inc
 # 
 # Top level modules:
 # 	reg16_inc
-# End time: 13:46:15 on Jun 14,2021, Elapsed time: 0:00:00
+# End time: 04:48:34 on Jun 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+D:/Academics/Matrix_multiplier {D:/Academics/Matrix_multiplier/reg8.v}
+# vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/reg8.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:46:15 on Jun 14,2021
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/Matrix_multiplier" D:/Academics/Matrix_multiplier/reg8.v 
+# Start time: 04:48:34 on Jun 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier" D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/reg8.v 
 # -- Compiling module reg8
 # 
 # Top level modules:
 # 	reg8
-# End time: 13:46:15 on Jun 14,2021, Elapsed time: 0:00:00
+# End time: 04:48:34 on Jun 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+D:/Academics/Matrix_multiplier {D:/Academics/Matrix_multiplier/core.v}
+# vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:46:15 on Jun 14,2021
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/Matrix_multiplier" D:/Academics/Matrix_multiplier/core.v 
+# Start time: 04:48:34 on Jun 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier" D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v 
 # -- Compiling module core
 # 
 # Top level modules:
 # 	core
-# End time: 13:46:16 on Jun 14,2021, Elapsed time: 0:00:01
+# End time: 04:48:34 on Jun 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+D:/Academics/Matrix_multiplier {D:/Academics/Matrix_multiplier/regAC.v}
+# vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/regAC.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:46:16 on Jun 14,2021
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/Matrix_multiplier" D:/Academics/Matrix_multiplier/regAC.v 
+# Start time: 04:48:34 on Jun 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier" D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/regAC.v 
 # -- Compiling module regAC
 # 
 # Top level modules:
 # 	regAC
-# End time: 13:46:16 on Jun 14,2021, Elapsed time: 0:00:00
+# End time: 04:48:34 on Jun 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+D:/Academics/Matrix_multiplier {D:/Academics/Matrix_multiplier/control_unit.v}
+# vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/control_unit.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:46:16 on Jun 14,2021
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/Matrix_multiplier" D:/Academics/Matrix_multiplier/control_unit.v 
+# Start time: 04:48:35 on Jun 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier" D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/control_unit.v 
 # -- Compiling module control_unit
 # 
 # Top level modules:
 # 	control_unit
-# End time: 13:46:16 on Jun 14,2021, Elapsed time: 0:00:00
+# End time: 04:48:35 on Jun 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+D:/Academics/Matrix_multiplier {D:/Academics/Matrix_multiplier/decoder_3to8.v}
+# vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/decoder_3to8.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:46:16 on Jun 14,2021
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/Matrix_multiplier" D:/Academics/Matrix_multiplier/decoder_3to8.v 
+# Start time: 04:48:35 on Jun 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier" D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/decoder_3to8.v 
 # -- Compiling module decoder_3to8
 # 
 # Top level modules:
 # 	decoder_3to8
-# End time: 13:46:16 on Jun 14,2021, Elapsed time: 0:00:00
+# End time: 04:48:35 on Jun 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+D:/Academics/Matrix_multiplier {D:/Academics/Matrix_multiplier/top.v}
+# vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/top.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:46:16 on Jun 14,2021
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/Matrix_multiplier" D:/Academics/Matrix_multiplier/top.v 
+# Start time: 04:48:35 on Jun 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier" D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/top.v 
 # -- Compiling module top
 # 
 # Top level modules:
 # 	top
-# End time: 13:46:16 on Jun 14,2021, Elapsed time: 0:00:00
+# End time: 04:48:35 on Jun 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+D:/Academics/Matrix_multiplier {D:/Academics/Matrix_multiplier/IRAM.v}
+# vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/IRAM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:46:16 on Jun 14,2021
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/Matrix_multiplier" D:/Academics/Matrix_multiplier/IRAM.v 
+# Start time: 04:48:35 on Jun 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier" D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/IRAM.v 
 # -- Compiling module IRAM
 # 
 # Top level modules:
 # 	IRAM
-# End time: 13:46:16 on Jun 14,2021, Elapsed time: 0:00:00
+# End time: 04:48:35 on Jun 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+D:/Academics/Matrix_multiplier {D:/Academics/Matrix_multiplier/DRAM.v}
+# vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/DRAM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:46:16 on Jun 14,2021
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/Matrix_multiplier" D:/Academics/Matrix_multiplier/DRAM.v 
+# Start time: 04:48:35 on Jun 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier" D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/DRAM.v 
 # -- Compiling module DRAM
 # 
 # Top level modules:
 # 	DRAM
-# End time: 13:46:16 on Jun 14,2021, Elapsed time: 0:00:00
+# End time: 04:48:35 on Jun 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/regCID.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 04:48:35 on Jun 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier" D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/regCID.v 
+# -- Compiling module regCID
+# 
+# Top level modules:
+# 	regCID
+# End time: 04:48:35 on Jun 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_32.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 04:48:35 on Jun 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier" D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_32.v 
+# -- Compiling module mux_32
+# 
+# Top level modules:
+# 	mux_32
+# End time: 04:48:35 on Jun 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -vlog01compat -work work +incdir+D:/Academics/Matrix_multiplier {D:/Academics/Matrix_multiplier/tb_top.v}
+# vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/tb_top.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:46:16 on Jun 14,2021
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/Matrix_multiplier" D:/Academics/Matrix_multiplier/tb_top.v 
+# Start time: 04:48:35 on Jun 28,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier" D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/tb_top.v 
 # -- Compiling module tb_top
 # 
 # Top level modules:
 # 	tb_top
-# End time: 13:46:16 on Jun 14,2021, Elapsed time: 0:00:00
+# End time: 04:48:35 on Jun 28,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb_top
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" tb_top 
-# Start time: 13:46:17 on Jun 14,2021
+# Start time: 04:48:35 on Jun 28,2021
 # Loading work.tb_top
 # Loading work.top
 # Loading work.DRAM
@@ -175,8 +185,9 @@
 # Loading work.reg8
 # Loading work.reg16_inc
 # Loading work.reg16
+# Loading work.regCID
 # Loading work.regAC
-# Loading work.mux_16
+# Loading work.mux_32
 # Loading work.decoder_4to16
 # Loading work.decoder_3to8
 # Loading work.ALU
@@ -184,6 +195,12 @@
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v(97): [PCDPC] - Port size (5) does not match connection size (4) for port 'sel'. The port definition is at: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_32.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top/DUT/core1/data_bus File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_32.v
+# ** Warning: (vsim-3015) D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v(114): [PCDPC] - Port size (4) does not match connection size (2) for port 'alu_control'. The port definition is at: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/ALU.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top/DUT/core1/ALU_ins File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/ALU.v
+# ** Warning: (vsim-3015) D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v(116): [PCDPC] - Port size (5) does not match connection size (4) for port 'mux_sig'. The port definition is at: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/control_unit.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top/DUT/core1/CU File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/control_unit.v
 # 
 # add wave *
 # view structure
@@ -191,24 +208,28 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# ** Note: $finish    : D:/Academics/Matrix_multiplier/tb_top.v(199)
-#    Time: 3001030 ps  Iteration: 0  Instance: /tb_top
+# ** Note: $finish    : D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/tb_top.v(201)
+#    Time: 3001030 ns  Iteration: 0  Instance: /tb_top
 # 1
-# Break in Module tb_top at D:/Academics/Matrix_multiplier/tb_top.v line 199
+# Break in Module tb_top at D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/tb_top.v line 201
+restart
+# ** Warning: (vsim-3015) D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v(97): [PCDPC] - Port size (5) does not match connection size (4) for port 'sel'. The port definition is at: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_32.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top/DUT/core1/data_bus File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_32.v
+# ** Warning: (vsim-3015) D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v(114): [PCDPC] - Port size (4) does not match connection size (2) for port 'alu_control'. The port definition is at: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/ALU.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top/DUT/core1/ALU_ins File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/ALU.v
+# ** Warning: (vsim-3015) D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v(116): [PCDPC] - Port size (5) does not match connection size (4) for port 'mux_sig'. The port definition is at: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/control_unit.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top/DUT/core1/CU File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/control_unit.v
+run
+run
 add wave -position insertpoint  \
-sim:/tb_top/DUT/core1/DR/data_out
-add wave -position insertpoint  \
-sim:/tb_top/DUT/core1/o_dram_write \
-sim:/tb_top/DUT/core1/o_dram_out
+sim:/tb_top/DUT/core1/IR/data_out
 restart
+# ** Warning: (vsim-3015) D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v(97): [PCDPC] - Port size (5) does not match connection size (4) for port 'sel'. The port definition is at: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_32.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top/DUT/core1/data_bus File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_32.v
+# ** Warning: (vsim-3015) D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v(114): [PCDPC] - Port size (4) does not match connection size (2) for port 'alu_control'. The port definition is at: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/ALU.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top/DUT/core1/ALU_ins File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/ALU.v
+# ** Warning: (vsim-3015) D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v(116): [PCDPC] - Port size (5) does not match connection size (4) for port 'mux_sig'. The port definition is at: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/control_unit.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top/DUT/core1/CU File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/control_unit.v
 run
-restart
-run
-restart
-run
-# ** Note: $finish    : D:/Academics/Matrix_multiplier/tb_top.v(199)
-#    Time: 3001030 ps  Iteration: 0  Instance: /tb_top
-# 1
-# Break in Module tb_top at D:/Academics/Matrix_multiplier/tb_top.v line 199
-# End time: 16:36:52 on Jun 14,2021, Elapsed time: 2:50:35
-# Errors: 0, Warnings: 0
+# End time: 04:50:50 on Jun 28,2021, Elapsed time: 0:02:15
+# Errors: 0, Warnings: 9
