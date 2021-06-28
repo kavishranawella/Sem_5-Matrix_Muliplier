@@ -7,8 +7,7 @@ input [7:0] in3;
 input [1:0] sel;
 output reg [7:0] out;
 
-	always @(sel or in0 or in1 or in2 or 
-					in3 )
+	always @(sel or in0 or in1 or in2 or in3)
 	begin
 		case (sel)
 			2'b00  : out <= in0;

@@ -4,7 +4,7 @@ input [15:0] in0;
 input [15:0] in1;
 input [15:0] in2;
 input [15:0] in3;  
-input [3:0] sel;
+input [1:0] sel;
 output reg [15:0] out;
 
 	always @(sel or in0 or in1 or in2 or in3 )
