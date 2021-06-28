@@ -89,7 +89,7 @@ reg16_inc C (.clk(neg_clk), .load(load_C), .inc(inc_C), .data_in(mux_out), .data
 
 reg16     CLA (.clk(neg_clk), .load(load_CLA), .data_in(mux_out), .data_out(mux_in_CLA));
 reg8 		 NOC (.clk(neg_clk), .load(load_NOC), .data_in(mux_out[7:0]), .data_out(mux_in_NOC));
-regCID 	#(.core_id(core_id)) CID (.data_out(mux_in_CID)); 
+regCID 	#(.core_id(core_id)) CID (.clk(neg_clk), .data_out(mux_in_CID)); 
 
 regAC AC (.clk(neg_clk), .alu_load(alu_control[3]), .mux_load(load_AC), .inc(inc_AC), .clear(clear_AC), 
 											.dec(dec_AC), .alu_in(alu_in), .mux_in(mux_out), .data_out(mux_in_AC));

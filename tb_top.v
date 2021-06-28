@@ -6,7 +6,7 @@ wire o_busy;
 
 parameter clk_period=20;
 
-
+ 
 
 top DUT (.i_clk(i_clk), .i_start(i_start), .o_busy(o_busy));
 						
