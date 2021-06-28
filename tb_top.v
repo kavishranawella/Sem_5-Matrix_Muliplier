@@ -2,13 +2,14 @@
 module tb_top();
 
 reg i_clk, i_start;
-wire o_busy; 
+wire o_busy_1, o_busy_2, o_busy_3, o_busy_4; 
 
 parameter clk_period=20;
 
  
 
-top DUT (.i_clk(i_clk), .i_start(i_start), .o_busy(o_busy));
+top DUT (.i_clk(i_clk), .i_start(i_start), .o_busy_1(o_busy_1), .o_busy_2(o_busy_2)
+				, .o_busy_3(o_busy_3), .o_busy_4(o_busy_4));
 						
 always
 		#(clk_period/2) i_clk = ~i_clk; 

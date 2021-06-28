@@ -63,7 +63,11 @@ parameter FETCH1=7'd0,  FETCH2=7'd1, FETCH3=7'd2, FETCH4=7'd3, NOP1=7'd4,
 			 DUMMY1=7'd55, DUMMY2=7'd56, DUMMY3=7'd57, DUMMY4=7'd58, DUMMY5=7'd59, DUMMY6=7'd60,
 			 DUMMY7=7'd61, DUMMY8=7'd62, DUMMY9=7'd63, DUMMY10=7'd64, DUMMY11=7'd65, DECAC1=7'd66,
 			 DIV_NOC1=7'd67, DIV_CID1=7'd68, MVAC_NOC1=7'd69, MVAC_CLA1=7'd70, MVR_CID1=7'd71, 
-			 MVR_CLA1=7'd72;
+			 MVR_CLA1=7'd72, LDAC10=7'd73, LDAC11=7'd74, LDAC12=7'd75, LDAC13=7'd76, LDAC14=7'd77, 
+			 LDAC15=7'd78, LDAC_IA4=7'd79, LDAC_IA5=7'd80, LDAC_IA6=7'd81, LDAC_IB4=7'd82, 
+			 LDAC_IB5=7'd83, LDAC_IB6=7'd84, STAC8=7'd85, STAC9=7'd86, STAC10=7'd87, STAC11=7'd88, 
+			 STAC12=7'd89, STAC13=7'd90, STAC_IC5=7'd91, STAC_IC6=7'd92, STAC_IC7=7'd93, 
+			 STAC_IC8=7'd94, STAC_IC9=7'd95, STAC_IC10=7'd96;
 				
 always @(posedge clk)
 begin
@@ -441,8 +445,8 @@ begin
 		
 		LDAC6:
 		begin
-			mux_sig <= sel_dram;
-			load_decode_sig <= load_DR;
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
 			alu_sig <= ALU_inactive;
 			inc_decode_sig <= inc_off;
 			busy_sig <= 1'b1;
@@ -451,17 +455,17 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
+			dram_read <= 1'b1;
 			dram_write <= 1'b0;
 			state <= LDAC7;
 		end
 		
 		LDAC7:
 		begin
-			mux_sig <= sel_DR;
-			load_decode_sig <= load_TR;
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
 			alu_sig <= ALU_inactive;
-			inc_decode_sig <= inc_AR;
+			inc_decode_sig <= inc_off;
 			busy_sig <= 1'b1;
 			rst_PC <= 1'b0;
 			clear_ac <= 1'b0;
@@ -475,6 +479,23 @@ begin
 		
 		LDAC8:
 		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b1;
+			dram_write <= 1'b0;
+			state <= LDAC9;
+		end
+		
+		LDAC9:
+		begin
 			mux_sig <= sel_dram;
 			load_decode_sig <= load_DR;
 			alu_sig <= ALU_inactive;
@@ -487,10 +508,95 @@ begin
 			iram_write <= 1'b0;
 			dram_read <= 1'b0;
 			dram_write <= 1'b0;
-			state <= LDAC9;
+			state <= LDAC10;
 		end
 		
-		LDAC9:
+		LDAC10:
+		begin
+			mux_sig <= sel_DR;
+			load_decode_sig <= load_TR;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_AR;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b1;
+			dram_write <= 1'b0;
+			state <= LDAC11;
+		end
+		
+		LDAC11:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b1;
+			dram_write <= 1'b0;
+			state <= LDAC12;
+		end
+		
+		LDAC12:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b1;
+			dram_write <= 1'b0;
+			state <= LDAC13;
+		end
+		
+		LDAC13:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b1;
+			dram_write <= 1'b0;
+			state <= LDAC14;
+		end
+		
+		LDAC14:
+		begin
+			mux_sig <= sel_dram;
+			load_decode_sig <= load_DR;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b0;
+			dram_write <= 1'b0;
+			state <= LDAC15;
+		end
+		
+		LDAC15:
 		begin
 			mux_sig <= sel_DRTR;
 			load_decode_sig <= load_AC;
@@ -526,6 +632,57 @@ begin
 		
 		LDAC_IA2:
 		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b1;
+			dram_write <= 1'b0;
+			state <= LDAC_IA3;
+		end
+		
+		LDAC_IA3:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b1;
+			dram_write <= 1'b0;
+			state <= LDAC_IA4;
+		end
+		
+		LDAC_IA4:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b1;
+			dram_write <= 1'b0;
+			state <= LDAC_IA5;
+		end
+		
+		LDAC_IA5:
+		begin
 			mux_sig <= sel_dram;
 			load_decode_sig <= load_DR;
 			alu_sig <= ALU_inactive;
@@ -538,10 +695,10 @@ begin
 			iram_write <= 1'b0;
 			dram_read <= 1'b0;
 			dram_write <= 1'b0;
-			state <= LDAC_IA3;
+			state <= LDAC_IA6;
 		end
 		
-		LDAC_IA3:
+		LDAC_IA6:
 		begin
 			mux_sig <= sel_DR;
 			load_decode_sig <= load_AC;
@@ -577,6 +734,57 @@ begin
 		
 		LDAC_IB2:
 		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b1;
+			dram_write <= 1'b0;
+			state <= LDAC_IB3;
+		end
+		
+		LDAC_IB3:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b1;
+			dram_write <= 1'b0;
+			state <= LDAC_IB4;
+		end
+		
+		LDAC_IB4:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b1;
+			dram_write <= 1'b0;
+			state <= LDAC_IB5;
+		end
+		
+		LDAC_IB5:
+		begin
 			mux_sig <= sel_dram;
 			load_decode_sig <= load_DR;
 			alu_sig <= ALU_inactive;
@@ -589,10 +797,10 @@ begin
 			iram_write <= 1'b0;
 			dram_read <= 1'b0;
 			dram_write <= 1'b0;
-			state <= LDAC_IB3;
+			state <= LDAC_IB6;
 		end
 		
-		LDAC_IB3:
+		LDAC_IB6:
 		begin
 			mux_sig <= sel_DR;
 			load_decode_sig <= load_AC;
@@ -713,10 +921,112 @@ begin
 		
 		STAC7:
 		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b0;
+			dram_write <= 1'b1;
+			state <= STAC8; 
+		end
+		
+		STAC8:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b0;
+			dram_write <= 1'b1;
+			state <= STAC9; 
+		end
+		
+		STAC9:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b0;
+			dram_write <= 1'b1;
+			state <= STAC10; 
+		end
+		
+		STAC10:
+		begin
 			mux_sig <= sel_ACinv;
 			load_decode_sig <= load_DR;
 			alu_sig <= ALU_inactive;
 			inc_decode_sig <= inc_AR;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b0;
+			dram_write <= 1'b1;
+			state <= STAC11; 
+		end
+		
+		STAC11:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b0;
+			dram_write <= 1'b1;
+			state <= STAC12; 
+		end
+		
+		STAC12:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b0;
+			dram_write <= 1'b1;
+			state <= STAC13; 
+		end
+		
+		STAC13:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
 			busy_sig <= 1'b1;
 			rst_PC <= 1'b0;
 			clear_ac <= 1'b0;
@@ -764,6 +1074,57 @@ begin
 		
 		STAC_IC3:
 		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b0;
+			dram_write <= 1'b1;
+			state <= STAC_IC4;
+		end
+		
+		STAC_IC4:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b0;
+			dram_write <= 1'b1;
+			state <= STAC_IC5;
+		end
+		
+		STAC_IC5:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b0;
+			dram_write <= 1'b1;
+			state <= STAC_IC6;
+		end
+		
+		STAC_IC6:
+		begin
 			mux_sig <= sel_C;
 			load_decode_sig <= load_AR;
 			alu_sig <= ALU_inactive;
@@ -776,10 +1137,10 @@ begin
 			iram_write <= 1'b0;
 			dram_read <= 1'b0;
 			dram_write <= 1'b0;
-			state <= STAC_IC4;
+			state <= STAC_IC7;
 		end
 		
-		STAC_IC4:
+		STAC_IC7:
 		begin
 			mux_sig <= sel_ACinv;
 			load_decode_sig <= load_DR;
@@ -793,7 +1154,58 @@ begin
 			iram_write <= 1'b0;
 			dram_read <= 1'b0;
 			dram_write <= 1'b1;
-			state <= FETCH1;  
+			state <= STAC_IC8;  
+		end
+		
+		STAC_IC8:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b0;
+			dram_write <= 1'b1;
+			state <= STAC_IC9;
+		end
+		
+		STAC_IC9:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b0;
+			dram_write <= 1'b1;
+			state <= STAC_IC10;
+		end
+		
+		STAC_IC10:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= 1'b0;
+			dram_write <= 1'b1;
+			state <= FETCH1;
 		end
 		
 		MVR_SR1:

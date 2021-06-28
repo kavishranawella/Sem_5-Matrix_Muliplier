@@ -1,13 +1,13 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="1499d7b18ab040f790a6"/>
+    <hash md5_digest_80b="473a4e18507ccf1d8323"/>
   </project>
   <file_info>
     <file device="EP4CE115F29C7" path="Matrix_multiplier.sof" usercode="0xFFFFFFFF"/>
   </file_info>
   <hub_info hub_ir_width="8" ir_width="8" node_addr_width="2" node_count="2"/>
   <node_info>
-    <node hpath="DRAM:dram|altsyncram:altsyncram_component|altsyncram_drl1:auto_generated|sld_mod_ram_rom:mgl_prim2" instance_id="0" mfg_id="110" node_id="3" sld_node_info="0x10186E00" version="2">
+    <node hpath="memory_control_unit:MCU|DRAM:dram|altsyncram:altsyncram_component|altsyncram_drl1:auto_generated|sld_mod_ram_rom:mgl_prim2" instance_id="0" mfg_id="110" node_id="3" sld_node_info="0x10186E00" version="2">
       <parameters>
         <parameter name="SLD_NODE_INFO" type="dec" value="270036480"/>
         <parameter name="SLD_AUTO_INSTANCE_INDEX" type="string" value="yes"/>
@@ -27,32 +27,32 @@
         <parameter name="node_name" type="unknown" value="1685217645"/>
       </parameters>
       <inputs>
-        <port name="data_read[0]" source="DRAM:dram|altsyncram:altsyncram_component|altsyncram_drl1:auto_generated|altsyncram_26c2:altsyncram1|q_b[0]"/>
-        <port name="data_read[1]" source="DRAM:dram|altsyncram:altsyncram_component|altsyncram_drl1:auto_generated|altsyncram_26c2:altsyncram1|q_b[1]"/>
-        <port name="data_read[2]" source="DRAM:dram|altsyncram:altsyncram_component|altsyncram_drl1:auto_generated|altsyncram_26c2:altsyncram1|q_b[2]"/>
-        <port name="data_read[3]" source="DRAM:dram|altsyncram:altsyncram_component|altsyncram_drl1:auto_generated|altsyncram_26c2:altsyncram1|q_b[3]"/>
-        <port name="data_read[4]" source="DRAM:dram|altsyncram:altsyncram_component|altsyncram_drl1:auto_generated|altsyncram_26c2:altsyncram1|q_b[4]"/>
-        <port name="data_read[5]" source="DRAM:dram|altsyncram:altsyncram_component|altsyncram_drl1:auto_generated|altsyncram_26c2:altsyncram1|q_b[5]"/>
-        <port name="data_read[6]" source="DRAM:dram|altsyncram:altsyncram_component|altsyncram_drl1:auto_generated|altsyncram_26c2:altsyncram1|q_b[6]"/>
-        <port name="data_read[7]" source="DRAM:dram|altsyncram:altsyncram_component|altsyncram_drl1:auto_generated|altsyncram_26c2:altsyncram1|q_b[7]"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_raw_tck" source="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_raw_tck"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_tdi" source="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_tdi"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_usr1" source="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_usr1"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_cdr" source="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_cdr"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_sdr" source="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_sdr"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_e1dr" source="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_e1dr"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_udr" source="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_udr"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_uir" source="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_uir"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_clr" source="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_clr"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ena" source="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ena"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_0_" source="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_0_"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_1_" source="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_1_"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_2_" source="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_2_"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_3_" source="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_3_"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_4_" source="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_4_"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_5_" source="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_5_"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_6_" source="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_6_"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_7_" source="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_7_"/>
+        <port name="data_read[0]" source="memory_control_unit:MCU|DRAM:dram|altsyncram:altsyncram_component|altsyncram_drl1:auto_generated|altsyncram_26c2:altsyncram1|q_b[0]"/>
+        <port name="data_read[1]" source="memory_control_unit:MCU|DRAM:dram|altsyncram:altsyncram_component|altsyncram_drl1:auto_generated|altsyncram_26c2:altsyncram1|q_b[1]"/>
+        <port name="data_read[2]" source="memory_control_unit:MCU|DRAM:dram|altsyncram:altsyncram_component|altsyncram_drl1:auto_generated|altsyncram_26c2:altsyncram1|q_b[2]"/>
+        <port name="data_read[3]" source="memory_control_unit:MCU|DRAM:dram|altsyncram:altsyncram_component|altsyncram_drl1:auto_generated|altsyncram_26c2:altsyncram1|q_b[3]"/>
+        <port name="data_read[4]" source="memory_control_unit:MCU|DRAM:dram|altsyncram:altsyncram_component|altsyncram_drl1:auto_generated|altsyncram_26c2:altsyncram1|q_b[4]"/>
+        <port name="data_read[5]" source="memory_control_unit:MCU|DRAM:dram|altsyncram:altsyncram_component|altsyncram_drl1:auto_generated|altsyncram_26c2:altsyncram1|q_b[5]"/>
+        <port name="data_read[6]" source="memory_control_unit:MCU|DRAM:dram|altsyncram:altsyncram_component|altsyncram_drl1:auto_generated|altsyncram_26c2:altsyncram1|q_b[6]"/>
+        <port name="data_read[7]" source="memory_control_unit:MCU|DRAM:dram|altsyncram:altsyncram_component|altsyncram_drl1:auto_generated|altsyncram_26c2:altsyncram1|q_b[7]"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_raw_tck" source="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_raw_tck"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_tdi" source="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_tdi"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_usr1" source="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_usr1"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_cdr" source="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_cdr"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_sdr" source="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_sdr"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_e1dr" source="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_e1dr"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_udr" source="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_udr"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_uir" source="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_jtag_state_uir"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_clr" source="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_clr"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ena" source="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ena"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_0_" source="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_0_"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_1_" source="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_1_"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_2_" source="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_2_"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_3_" source="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_3_"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_4_" source="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_4_"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_5_" source="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_5_"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_6_" source="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_6_"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_7_" source="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_in_7_"/>
       </inputs>
       <outputs>
         <port name="tck_usr"/>
@@ -81,15 +81,15 @@
         <port name="data_write[5]"/>
         <port name="data_write[6]"/>
         <port name="data_write[7]"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_out_0_"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_out_1_"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_out_2_"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_out_3_"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_out_4_"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_out_5_"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_out_6_"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_ir_out_7_"/>
-        <port name="jtag.bp.dram_altsyncram_component_auto_generated_mgl_prim2_tdo"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_out_0_"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_out_1_"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_out_2_"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_out_3_"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_out_4_"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_out_5_"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_out_6_"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_ir_out_7_"/>
+        <port name="jtag.bp.MCU_dram_altsyncram_component_auto_generated_mgl_prim2_tdo"/>
       </outputs>
     </node>
     <node hpath="IRAM:iram|altsyncram:altsyncram_component|altsyncram_oml1:auto_generated|sld_mod_ram_rom:mgl_prim2" instance_id="1" mfg_id="110" node_id="3" sld_node_info="0x10186E01" version="2">

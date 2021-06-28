@@ -74,18 +74,18 @@ wire [3:0] load_decode_sig;
 wire [2:0] inc_decode_sig;
 
 
-reg8_inc  PC (.clk(neg_clk), .rst(rst_PC), .load(load_PC), .inc(inc_PC), .data_in(mux_out[7:0]), .data_out(o_iram_addr));
-reg8      IR (.clk(neg_clk), .load(load_IR), .data_in(mux_out[7:0]), .data_out(instruction)); 
-reg16_inc AR (.clk(neg_clk), .load(load_AR), .inc(inc_AR), .data_in(mux_out), .data_out(o_dram_addr));
-reg8      DR (.clk(neg_clk), .load(load_DR), .data_in(mux_out[7:0]), .data_out(mux_in_DR));
-reg16     PR (.clk(neg_clk), .load(load_PR), .data_in(mux_out), .data_out(mux_in_PR));
-reg16     SR (.clk(neg_clk), .load(load_SR), .data_in(mux_out), .data_out(mux_in_SR));
+reg8_inc  PC  (.clk(neg_clk), .rst(rst_PC), .load(load_PC), .inc(inc_PC), .data_in(mux_out[7:0]), .data_out(o_iram_addr));
+reg8      IR  (.clk(neg_clk), .load(load_IR), .data_in(mux_out[7:0]), .data_out(instruction)); 
+reg16_inc AR  (.clk(neg_clk), .load(load_AR), .inc(inc_AR), .data_in(mux_out), .data_out(o_dram_addr));
+reg8      DR  (.clk(neg_clk), .load(load_DR), .data_in(mux_out[7:0]), .data_out(mux_in_DR));
+reg16     PR  (.clk(neg_clk), .load(load_PR), .data_in(mux_out), .data_out(mux_in_PR));
+reg16     SR  (.clk(neg_clk), .load(load_SR), .data_in(mux_out), .data_out(mux_in_SR));
 reg16     CDR (.clk(neg_clk), .load(load_CDR), .data_in(mux_out), .data_out(mux_in_CDR));
-reg16_inc R (.clk(neg_clk), .load(load_R), .inc(inc_R), .data_in(mux_out), .data_out(mux_in_R));
-reg8 		 TR (.clk(neg_clk), .load(load_TR), .data_in(mux_out[7:0]), .data_out(mux_in_TR));
-reg16_inc A (.clk(neg_clk), .load(load_A), .inc(inc_A), .data_in(mux_out), .data_out(mux_in_A));
-reg16_inc B (.clk(neg_clk), .load(load_B), .inc(inc_B), .data_in(mux_out), .data_out(mux_in_B));
-reg16_inc C (.clk(neg_clk), .load(load_C), .inc(inc_C), .data_in(mux_out), .data_out(mux_in_C));
+reg16_inc R   (.clk(neg_clk), .load(load_R), .inc(inc_R), .data_in(mux_out), .data_out(mux_in_R));
+reg8 		 TR  (.clk(neg_clk), .load(load_TR), .data_in(mux_out[7:0]), .data_out(mux_in_TR));
+reg16_inc A   (.clk(neg_clk), .load(load_A), .inc(inc_A), .data_in(mux_out), .data_out(mux_in_A));
+reg16_inc B   (.clk(neg_clk), .load(load_B), .inc(inc_B), .data_in(mux_out), .data_out(mux_in_B));
+reg16_inc C   (.clk(neg_clk), .load(load_C), .inc(inc_C), .data_in(mux_out), .data_out(mux_in_C));
 
 reg16     CLA (.clk(neg_clk), .load(load_CLA), .data_in(mux_out), .data_out(mux_in_CLA));
 reg8 		 NOC (.clk(neg_clk), .load(load_NOC), .data_in(mux_out[7:0]), .data_out(mux_in_NOC));
