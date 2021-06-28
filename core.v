@@ -1,6 +1,6 @@
-module core (i_clk, i_start, i_dram_in, i_iram_in, o_dram_addr, o_dram_read,
+module core #(parameter [7:0] core_id = 1) (i_clk, i_start, i_dram_in, i_iram_in, o_dram_addr, o_dram_read,
 					o_dram_write, o_dram_out, o_iram_addr, o_iram_read, 
-					o_iram_write, o_iram_out, o_busy);  //#(parameter [7:0] core_id = 8'd1)
+					o_iram_write, o_iram_out, o_busy); 
 
 input i_clk;
 input i_start;
@@ -69,7 +69,7 @@ wire [15:0] alu_in;
 wire [3:0] alu_control;
 
 wire [7:0] instruction;
-wire [3:0] mux_sig; 
+wire [4:0] mux_sig; 
 wire [3:0] load_decode_sig;
 wire [2:0] inc_decode_sig;
 
@@ -89,9 +89,9 @@ reg16_inc C (.clk(neg_clk), .load(load_C), .inc(inc_C), .data_in(mux_out), .data
 
 reg16     CLA (.clk(neg_clk), .load(load_CLA), .data_in(mux_out), .data_out(mux_in_CLA));
 reg8 		 NOC (.clk(neg_clk), .load(load_NOC), .data_in(mux_out[7:0]), .data_out(mux_in_NOC));
-regCID 	 CID (.dummy(i_start), .data_out(mux_in_CID)); // #(.core_id(core_id))	
+regCID 	#(.core_id(core_id)) CID (.data_out(mux_in_CID)); 
 
-regAC AC (.clk(neg_clk), .alu_load(alu_control[2]), .mux_load(load_AC), .inc(inc_AC), .clear(clear_AC), 
+regAC AC (.clk(neg_clk), .alu_load(alu_control[3]), .mux_load(load_AC), .inc(inc_AC), .clear(clear_AC), 
 											.dec(dec_AC), .alu_in(alu_in), .mux_in(mux_out), .data_out(mux_in_AC));
 
 mux_32 data_bus (.in0({dummy_8, mux_in_DR}), .in1(mux_in_PR), .in2(mux_in_SR), 
@@ -111,7 +111,7 @@ decoder_4to16 load_sig (.in_sig(load_decode_sig), .out_sig({load_NOC, load_CLA, 
 
 decoder_3to8 increase_sig (.in_sig(inc_decode_sig), .out_sig({inc_AR, inc_AC, inc_C, inc_B, inc_A, inc_R, inc_PC}));						
 						
-ALU ALU_ins (.clk(neg_clk), .in1(mux_in_AC), .in2(mux_out), .alu_control(alu_control[1:0]), .out(alu_in), .zflag(zflag));
+ALU ALU_ins (.clk(neg_clk), .in1(mux_in_AC), .in2(mux_out), .alu_control(alu_control[2:0]), .out(alu_in), .zflag(zflag));
 
 control_unit CU (.clk(i_clk), .instruction(instruction), .zflag(zflag), .start_sig(i_start),
 						.busy_sig(o_busy), .mux_sig(mux_sig), .load_decode_sig(load_decode_sig), 

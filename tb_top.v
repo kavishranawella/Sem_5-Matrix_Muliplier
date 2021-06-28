@@ -25,11 +25,11 @@ initial begin
 
 	#1500000
 	
-	i_start <= 1'b0;
+	//i_start <= 1'b0;
 	
-	#500
+	//#500
 	
-	i_start <= 1'b1;
+	//i_start <= 1'b1;
 	
 	
 	#1500000

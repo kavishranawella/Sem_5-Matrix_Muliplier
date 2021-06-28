@@ -1,12 +1,11 @@
-module regCID (dummy, data_out); //#(parameter [7:0] core_id = 8'd1)
+module regCID #(parameter [7:0] core_id = 1) (data_out); 
 
-	input dummy;
 	output reg [7:0] data_out;
 	
-	always @(dummy)
+	always
 	begin
 	
-		data_out <= 8'd1;
+		data_out <= core_id;
 	
 	end
 	

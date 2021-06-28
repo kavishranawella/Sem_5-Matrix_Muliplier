@@ -3,7 +3,7 @@ module ALU (clk, in1, in2, alu_control, out, zflag);
 input clk;
 input [15:0] in1;
 input [15:0] in2;
-input [3:0] alu_control;
+input [2:0] alu_control;
 output reg [15:0] out;
 output zflag;
 

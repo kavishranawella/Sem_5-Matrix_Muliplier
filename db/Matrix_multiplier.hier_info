@@ -3941,7 +3941,7 @@ TDO <= WORD_SR[0].DB_MAX_OUTPUT_PORT_TYPE
 
 |top|core:core1
 i_clk => i_clk.IN1
-i_start => i_start.IN2
+i_start => i_start.IN1
 i_dram_in[0] => i_dram_in[0].IN1
 i_dram_in[1] => i_dram_in[1].IN1
 i_dram_in[2] => i_dram_in[2].IN1
@@ -4880,7 +4880,6 @@ data_out[7] <= data_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|core:core1|regCID:CID
-dummy => ~NO_FANOUT~
 data_out[0] <= <VCC>
 data_out[1] <= <GND>
 data_out[2] <= <GND>
@@ -5909,7 +5908,6 @@ alu_control[2] => Mux12.IN7
 alu_control[2] => Mux13.IN7
 alu_control[2] => Mux14.IN7
 alu_control[2] => Mux15.IN7
-alu_control[3] => ~NO_FANOUT~
 out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
