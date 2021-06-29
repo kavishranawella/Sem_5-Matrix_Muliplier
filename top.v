@@ -7,19 +7,23 @@ wire [7:0] iram_data_out;
 
 wire [7:0] iram_addr_1, iram_data_in_1, dram_data_in_1, dram_data_out_1;
 wire [15:0] dram_addr_1;
-wire iram_write_1, iram_read_1, dram_write_1, dram_read_1;
+wire iram_write_1, iram_read_1; 
+wire [1:0] dram_write_1, dram_read_1;
 
 wire [7:0] iram_addr_2, iram_data_in_2, dram_data_in_2, dram_data_out_2;
 wire [15:0] dram_addr_2;
-wire iram_write_2, iram_read_2, dram_write_2, dram_read_2;
+wire iram_write_2, iram_read_2; 
+wire [1:0] dram_write_2, dram_read_2;
 
 wire [7:0] iram_addr_3, iram_data_in_3, dram_data_in_3, dram_data_out_3;
 wire [15:0] dram_addr_3;
-wire iram_write_3, iram_read_3, dram_write_3, dram_read_3;
+wire iram_write_3, iram_read_3; 
+wire [1:0] dram_write_3, dram_read_3;
 
 wire [7:0] iram_addr_4, iram_data_in_4, dram_data_in_4, dram_data_out_4;
 wire [15:0] dram_addr_4;
-wire iram_write_4, iram_read_4, dram_write_4, dram_read_4;
+wire iram_write_4, iram_read_4; 
+wire [1:0] dram_write_4, dram_read_4;
 
 reg clk = 1'b0;
 reg [1:0] count=2'd0;

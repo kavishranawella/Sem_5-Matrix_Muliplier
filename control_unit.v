@@ -16,10 +16,13 @@ output reg clear_ac;
 output reg dec_ac;
 output reg iram_read;
 output reg iram_write;
-output reg dram_read;
-output reg dram_write;
+output reg [1:0] dram_read;
+output reg [1:0] dram_write;
 
 reg [6:0] state = 7'd49;
+
+parameter read_off=2'b00, read_same=2'b01, read_different=2'b11;
+parameter write_off=2'b00, write_same=2'b01, write_different=2'b11;
 
 parameter load_off=4'b0000, load_PC=4'b0001, load_IR=4'b0010, load_AR=4'b0011,
 				load_DR=4'b0100, load_PR=4'b0101, load_SR=4'b0110, load_CDR=4'b0111,
@@ -63,10 +66,12 @@ parameter FETCH1=7'd0,  FETCH2=7'd1, FETCH3=7'd2, FETCH4=7'd3, NOP1=7'd4,
 			 DUMMY1=7'd55, DUMMY2=7'd56, DUMMY3=7'd57, DUMMY4=7'd58, DUMMY5=7'd59, DUMMY6=7'd60,
 			 DUMMY7=7'd61, DUMMY8=7'd62, DUMMY9=7'd63, DUMMY10=7'd64, DUMMY11=7'd65, DECAC1=7'd66,
 			 DIV_NOC1=7'd67, DIV_CID1=7'd68, MVAC_NOC1=7'd69, MVAC_CLA1=7'd70, MVR_CID1=7'd71, 
-			 MVR_CLA1=7'd72, LDAC10=7'd73, LDAC11=7'd74, LDAC12=7'd75, LDAC13=7'd76, LDAC14=7'd77, 
-			 LDAC15=7'd78, LDAC_IA4=7'd79, LDAC_IA5=7'd80, LDAC_IA6=7'd81, LDAC_IB4=7'd82, 
-			 LDAC_IB5=7'd83, LDAC_IB6=7'd84, STAC8=7'd85, STAC9=7'd86, STAC10=7'd87, STAC11=7'd88, 
-			 STAC12=7'd89, STAC13=7'd90, STAC_IC5=7'd91, STAC_IC6=7'd92, STAC_IC7=7'd93, 
+			 MVR_CLA1=7'd72, LDAC10=7'd73, LDAC11=7'd74, 
+			 //LDAC12=7'd75, LDAC13=7'd76, LDAC14=7'd77, LDAC15=7'd78, 
+			 LDAC_IA4=7'd79, LDAC_IA5=7'd80, LDAC_IA6=7'd81, LDAC_IA7=7'd82, LDAC_IB4=7'd83, 
+			 //LDAC_IB6=7'd84, STAC8=7'd85, STAC9=7'd86, STAC10=7'd87, STAC11=7'd88, 
+			 //STAC12=7'd89, STAC13=7'd90, 
+			 STAC_IC5=7'd91, STAC_IC6=7'd92, STAC_IC7=7'd93, 
 			 STAC_IC8=7'd94, STAC_IC9=7'd95, STAC_IC10=7'd96;
 				
 always @(posedge clk)
@@ -85,8 +90,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -102,8 +107,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b1;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH2;
 		end
 		
@@ -119,8 +124,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH3;
 		end
 		
@@ -136,8 +141,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH4;
 		end
 		
@@ -153,8 +158,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			
 			case (instruction[7:4])
 			
@@ -336,8 +341,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -353,8 +358,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -370,8 +375,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b1;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= LDAC2;
 		end
 		
@@ -387,8 +392,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= LDAC3;
 		end
 		
@@ -404,8 +409,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b1;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= LDAC4;
 		end
 		
@@ -421,8 +426,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= LDAC5;
 		end
 		
@@ -438,8 +443,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b1;
-			dram_write <= 1'b0;
+			dram_read <= read_same;
+			dram_write <= write_off;
 			state <= LDAC6;
 		end
 		
@@ -455,46 +460,12 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b1;
-			dram_write <= 1'b0;
+			dram_read <= read_same;
+			dram_write <= write_off;
 			state <= LDAC7;
 		end
 		
 		LDAC7:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_inactive;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			dec_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b1;
-			dram_write <= 1'b0;
-			state <= LDAC8;
-		end
-		
-		LDAC8:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_inactive;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			dec_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b1;
-			dram_write <= 1'b0;
-			state <= LDAC9;
-		end
-		
-		LDAC9:
 		begin
 			mux_sig <= sel_dram;
 			load_decode_sig <= load_DR;
@@ -506,12 +477,12 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
-			state <= LDAC10;
+			dram_read <= read_off;
+			dram_write <= write_off;
+			state <= LDAC8;
 		end
 		
-		LDAC10:
+		LDAC8:
 		begin
 			mux_sig <= sel_DR;
 			load_decode_sig <= load_TR;
@@ -523,12 +494,12 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b1;
-			dram_write <= 1'b0;
-			state <= LDAC11;
+			dram_read <= read_same;
+			dram_write <= write_off;
+			state <= LDAC9;
 		end
 		
-		LDAC11:
+		LDAC9:
 		begin
 			mux_sig <= sel_none;
 			load_decode_sig <= load_off;
@@ -540,46 +511,12 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b1;
-			dram_write <= 1'b0;
-			state <= LDAC12;
+			dram_read <= read_same;
+			dram_write <= write_off;
+			state <= LDAC10;
 		end
 		
-		LDAC12:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_inactive;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			dec_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b1;
-			dram_write <= 1'b0;
-			state <= LDAC13;
-		end
-		
-		LDAC13:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_inactive;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			dec_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b1;
-			dram_write <= 1'b0;
-			state <= LDAC14;
-		end
-		
-		LDAC14:
+		LDAC10:
 		begin
 			mux_sig <= sel_dram;
 			load_decode_sig <= load_DR;
@@ -591,12 +528,12 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
-			state <= LDAC15;
+			dram_read <= read_off;
+			dram_write <= write_off;
+			state <= LDAC11;
 		end
 		
-		LDAC15:
+		LDAC11:
 		begin
 			mux_sig <= sel_DRTR;
 			load_decode_sig <= load_AC;
@@ -608,8 +545,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -625,8 +562,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b1;
-			dram_write <= 1'b0;
+			dram_read <= read_different;
+			dram_write <= write_off;
 			state <= LDAC_IA2;
 		end
 		
@@ -642,8 +579,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b1;
-			dram_write <= 1'b0;
+			dram_read <= read_different;
+			dram_write <= write_off;
 			state <= LDAC_IA3;
 		end
 		
@@ -659,8 +596,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b1;
-			dram_write <= 1'b0;
+			dram_read <= read_different;
+			dram_write <= write_off;
 			state <= LDAC_IA4;
 		end
 		
@@ -676,12 +613,29 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b1;
-			dram_write <= 1'b0;
+			dram_read <= read_different;
+			dram_write <= write_off;
 			state <= LDAC_IA5;
 		end
 		
 		LDAC_IA5:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= read_different;
+			dram_write <= write_off;
+			state <= LDAC_IA6;
+		end
+		
+		LDAC_IA6:
 		begin
 			mux_sig <= sel_dram;
 			load_decode_sig <= load_DR;
@@ -693,12 +647,12 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
-			state <= LDAC_IA6;
+			dram_read <= read_off;
+			dram_write <= write_off;
+			state <= LDAC_IA7;
 		end
 		
-		LDAC_IA6:
+		LDAC_IA7:
 		begin
 			mux_sig <= sel_DR;
 			load_decode_sig <= load_AC;
@@ -710,8 +664,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -727,8 +681,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b1;
-			dram_write <= 1'b0;
+			dram_read <= read_same;
+			dram_write <= write_off;
 			state <= LDAC_IB2;
 		end
 		
@@ -744,46 +698,12 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b1;
-			dram_write <= 1'b0;
+			dram_read <= read_same;
+			dram_write <= write_off;
 			state <= LDAC_IB3;
 		end
 		
 		LDAC_IB3:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_inactive;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			dec_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b1;
-			dram_write <= 1'b0;
-			state <= LDAC_IB4;
-		end
-		
-		LDAC_IB4:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_inactive;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			dec_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b1;
-			dram_write <= 1'b0;
-			state <= LDAC_IB5;
-		end
-		
-		LDAC_IB5:
 		begin
 			mux_sig <= sel_dram;
 			load_decode_sig <= load_DR;
@@ -795,12 +715,12 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
-			state <= LDAC_IB6;
+			dram_read <= read_off;
+			dram_write <= write_off;
+			state <= LDAC_IB4;
 		end
 		
-		LDAC_IB6:
+		LDAC_IB4:
 		begin
 			mux_sig <= sel_DR;
 			load_decode_sig <= load_AC;
@@ -812,8 +732,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -829,8 +749,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b1;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= STAC2;
 		end
 		
@@ -846,8 +766,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= STAC3;
 		end
 		
@@ -863,8 +783,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b1;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= STAC4;
 		end
 		
@@ -880,8 +800,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= STAC5;
 		end
 		
@@ -897,8 +817,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= STAC6;
 		end
 		
@@ -914,63 +834,12 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b1;
+			dram_read <= read_off;
+			dram_write <= write_same;
 			state <= STAC7; 
 		end
 		
 		STAC7:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_inactive;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			dec_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b1;
-			state <= STAC8; 
-		end
-		
-		STAC8:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_inactive;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			dec_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b1;
-			state <= STAC9; 
-		end
-		
-		STAC9:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_inactive;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			dec_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b1;
-			state <= STAC10; 
-		end
-		
-		STAC10:
 		begin
 			mux_sig <= sel_ACinv;
 			load_decode_sig <= load_DR;
@@ -982,59 +851,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b1;
-			state <= STAC11; 
-		end
-		
-		STAC11:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_inactive;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			dec_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b1;
-			state <= STAC12; 
-		end
-		
-		STAC12:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_inactive;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			dec_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b1;
-			state <= STAC13; 
-		end
-		
-		STAC13:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_inactive;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			dec_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b1;
+			dram_read <= read_off;
+			dram_write <= write_same;
 			state <= FETCH1; 
 		end
 		
@@ -1050,8 +868,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= STAC_IC2;
 		end
 		
@@ -1067,8 +885,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b1;
+			dram_read <= read_off;
+			dram_write <= write_different;
 			state <= STAC_IC3;
 		end
 		
@@ -1084,8 +902,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b1;
+			dram_read <= read_off;
+			dram_write <= write_different;
 			state <= STAC_IC4;
 		end
 		
@@ -1101,8 +919,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b1;
+			dram_read <= read_off;
+			dram_write <= write_different;
 			state <= STAC_IC5;
 		end
 		
@@ -1118,8 +936,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b1;
+			dram_read <= read_off;
+			dram_write <= write_different;
 			state <= STAC_IC6;
 		end
 		
@@ -1135,8 +953,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= STAC_IC7;
 		end
 		
@@ -1152,8 +970,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b1;
+			dram_read <= read_off;
+			dram_write <= write_different;
 			state <= STAC_IC8;  
 		end
 		
@@ -1169,8 +987,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b1;
+			dram_read <= read_off;
+			dram_write <= write_different;
 			state <= STAC_IC9;
 		end
 		
@@ -1186,8 +1004,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b1;
+			dram_read <= read_off;
+			dram_write <= write_different;
 			state <= STAC_IC10;
 		end
 		
@@ -1203,8 +1021,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b1;
+			dram_read <= read_off;
+			dram_write <= write_different;
 			state <= FETCH1;
 		end
 		
@@ -1220,8 +1038,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1237,8 +1055,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1254,8 +1072,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1271,8 +1089,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1288,8 +1106,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1305,8 +1123,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1322,8 +1140,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1339,8 +1157,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1356,8 +1174,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1373,8 +1191,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1390,8 +1208,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1407,8 +1225,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1424,8 +1242,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1441,8 +1259,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1458,8 +1276,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= DUMMY9;
 		end
 		
@@ -1475,8 +1293,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1492,8 +1310,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1509,8 +1327,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= DUMMY1;
 		end
 		
@@ -1526,8 +1344,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1543,8 +1361,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= DUMMY2;
 		end
 		
@@ -1560,8 +1378,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1577,8 +1395,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= DUMMY3;
 		end
 		
@@ -1594,8 +1412,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1611,8 +1429,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= DUMMY4;
 		end
 		
@@ -1628,8 +1446,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1645,8 +1463,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= DUMMY5;
 		end
 		
@@ -1662,8 +1480,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1679,8 +1497,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= DUMMY6; 
 		end
 		
@@ -1696,8 +1514,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1; 
 		end
 		
@@ -1713,8 +1531,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= DUMMY10;
 		end
 		
@@ -1730,8 +1548,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1747,8 +1565,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= DUMMY11; 
 		end
 		
@@ -1764,8 +1582,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1; 
 		end
 		
@@ -1781,8 +1599,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b1;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= JPNZY2;
 		end
 		
@@ -1798,8 +1616,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= JPNZY3;
 		end
 		
@@ -1815,8 +1633,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1832,8 +1650,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1849,8 +1667,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1866,8 +1684,8 @@ begin
 			dec_ac <= 1'b1;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= FETCH1;
 		end
 		
@@ -1883,8 +1701,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			if (start_sig)	state <= END1;
 			else state <= START1;
 		end
@@ -1901,8 +1719,8 @@ begin
 			dec_ac <= 1'b0;
 			iram_read <= 1'b0;
 			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
 			state <= END1;
 		end
 		
