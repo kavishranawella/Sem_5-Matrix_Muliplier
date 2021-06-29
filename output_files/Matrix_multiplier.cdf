@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("D:/Academics/FPGA - Matrix Multiplier/Verilog_modules/Matrix_multiplier/output_files/") File("Matrix_multiplier.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/output_files/") File("Matrix_multiplier.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

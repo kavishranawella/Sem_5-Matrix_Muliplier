@@ -1,0 +1,22 @@
+module mux_8 (in0, in1, in2, in3, sel, out); 
+
+input [7:0] in0; 
+input [7:0] in1;
+input [7:0] in2;
+input [7:0] in3; 
+input [1:0] sel;
+output reg [7:0] out;
+
+	always @(sel or in0 or in1 or in2 or 
+					in3 )
+	begin
+		case (sel)
+			4'b0000  : out <= in0;
+			4'b0001  : out <= in1;
+			4'b0010  : out <= in2;
+			4'b0011  : out <= in3;
+			default : out <= 8'bXXXXXXXX; 
+		endcase
+	end
+
+endmodule

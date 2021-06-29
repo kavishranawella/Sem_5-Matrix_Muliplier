@@ -420,11 +420,11 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : E17       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : E18       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E19       :        :                   :         : 7         :                
 VCCIO7                       : E20       : power  :                   : 2.5V    : 7         :                
-o_busy                       : E21       : output : 2.5 V             :         : 7         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E22       :        :                   :         : 7         :                
+o_busy_1                     : E21       : output : 2.5 V             :         : 7         : Y              
+o_busy_2                     : E22       : output : 2.5 V             :         : 7         : Y              
 VCCIO7                       : E23       : power  :                   : 2.5V    : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E24       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E25       :        :                   :         : 7         :                
+o_busy_4                     : E24       : output : 2.5 V             :         : 7         : Y              
+o_busy_3                     : E25       : output : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E26       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E27       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E28       :        :                   :         : 6         :                
