@@ -1,6 +1,6 @@
 module core #(parameter [7:0] core_id = 1) (i_clk, i_start, i_dram_in, i_iram_in, o_dram_addr, o_dram_read,
 					o_dram_write, o_dram_out, o_iram_addr, o_iram_read, 
-					o_iram_write, o_iram_out, o_busy); 
+					o_iram_write, o_iram_out, o_busy, o_noc); 
 
 input i_clk;
 input i_start;
@@ -15,6 +15,7 @@ output o_iram_read;
 output o_iram_write;
 output [7:0] o_iram_out;
 output o_busy;
+output [2:0] o_noc;
 
 wire neg_clk;
 wire [15:0] mux_out;
@@ -117,7 +118,7 @@ control_unit CU (.clk(i_clk), .instruction(instruction), .zflag(zflag), .start_s
 						.busy_sig(o_busy), .mux_sig(mux_sig), .load_decode_sig(load_decode_sig), 
 						.alu_sig(alu_control), .rst_PC(rst_PC), .inc_decode_sig(inc_decode_sig), 
 						.clear_ac(clear_AC), .dec_ac(dec_AC), .iram_read(o_iram_read), 
-						.iram_write(o_iram_write), .dram_read(o_dram_read), .dram_write(o_dram_write));
+						.iram_write(o_iram_write), .dram_read(o_dram_read), .dram_write(o_dram_write), .noc(mux_in_NOC));
 
 assign dummy_16 = 16'b0000000000000000; 
 assign dummy_8 = 8'b00000000;
@@ -126,5 +127,7 @@ assign o_iram_out = mux_in_DR;
 assign o_dram_out = mux_in_DR;
 
 assign neg_clk = ~i_clk;
+
+assign o_noc =  mux_in_NOC[2:0];
 
 endmodule

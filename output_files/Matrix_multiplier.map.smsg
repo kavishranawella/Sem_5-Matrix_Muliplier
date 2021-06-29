@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at control_unit.v(9): object "noc" differs only in case from object "NOC" in the same scope File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/control_unit.v Line: 9

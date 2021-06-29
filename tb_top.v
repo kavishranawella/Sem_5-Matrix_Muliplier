@@ -24,7 +24,7 @@ initial begin
 	i_start <= 1'b1;
 	
 
-	#1500000
+	#250000
 	
 	//i_start <= 1'b0;
 	
@@ -33,7 +33,7 @@ initial begin
 	//i_start <= 1'b1;
 	
 	
-	#1500000
+	#250000
 //	i_dram_read <= 1'b1;
 //	i_dram_addr <= 16'b0000000000100100;
 //	

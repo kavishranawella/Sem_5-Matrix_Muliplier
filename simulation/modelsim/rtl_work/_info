@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dD:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/simulation/modelsim
 vALU
-Z1 !s110 1624888355
+Z1 !s110 1624999021
 !i10b 1
 !s100 j2=`^Rk6P84z6Ro=GU?k70
 IC_Q[nZOVSg6fiF16mRjB:3
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1624888355.000000
+Z4 !s108 1624999021.000000
 !s107 D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/ALU.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier|D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/ALU.v|
 !i113 1
@@ -34,11 +34,11 @@ n@a@l@u
 vcontrol_unit
 R1
 !i10b 1
-!s100 f>:2J[]TTzX[G[e4GTT]H1
-ISBl[Skjg3K8X:Q_;ld@Sz0
+!s100 M[F;dbN:m4`_j]2CWZ<8a2
+IczQ5NFcIZZ7Z2Z?1hiooU2
 R2
 R0
-w1624887458
+w1624998791
 8D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/control_unit.v
 FD:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/control_unit.v
 L0 1
@@ -56,11 +56,11 @@ R7
 vcore
 R1
 !i10b 1
-!s100 R`5d0=EP>EDN5RPD`Ki:M1
-Io>hmZ13OM6OINW9KWLWz;3
+!s100 6NMm;SRd4g9]2;Ze6ln3N3
+ISIzE6zo330?gKiT^RLZb=3
 R2
 R0
-w1624877708
+w1624992896
 8D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v
 FD:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v
 L0 1
@@ -119,44 +119,22 @@ R4
 R5
 R6
 R7
-vdemux_8
-Z9 !s110 1624888354
-!i10b 1
-!s100 6z:b20AQWkk@CFPA5NP0n2
-I;zCI6]jzjV85EdgnCLUz@3
-R2
-R0
-w1624884048
-8D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/demux_8.v
-FD:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/demux_8.v
-L0 1
-R3
-r1
-!s85 0
-31
-Z10 !s108 1624888354.000000
-!s107 D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/demux_8.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier|D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/demux_8.v|
-!i113 1
-R5
-R6
-R7
 vDRAM
-R1
+Z9 !s110 1624999022
 !i10b 1
 !s100 1F7B<;8h0;IV=TO_XK[@k0
 IW6>N^@znUichJnWTbWHVh2
 R2
 R0
-w1624887859
+w1624995366
 8D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/DRAM.v
 FD:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/DRAM.v
-Z11 L0 39
+Z10 L0 39
 R3
 r1
 !s85 0
 31
-R4
+Z11 !s108 1624999022.000000
 !s107 D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/DRAM.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier|D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/DRAM.v|
 !i113 1
@@ -165,16 +143,16 @@ R6
 R7
 n@d@r@a@m
 vIRAM
-R1
+R9
 !i10b 1
 !s100 L3i;2cZ3[oFl;>J2`@P2;3
 IlD`hHIG7^;g>m?:Zi6]aH1
 R2
 R0
-w1624864685
+w1624998899
 8D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/IRAM.v
 FD:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/IRAM.v
-R11
+R10
 R3
 r1
 !s85 0
@@ -188,13 +166,13 @@ R6
 R7
 n@i@r@a@m
 vmemory_control_unit
-R9
+Z12 !s110 1624999020
 !i10b 1
-!s100 fGd0zn66BkXD_jT[>nOA_2
-ISQ;Ujd>bS<>=LCdP`nF`11
+!s100 ed]XiKSd<Oz0:X<o^YnCl1
+Im9^Sj6m32_cAVm]R;miR=3
 R2
 R0
-w1624884047
+w1624993931
 8D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/memory_control_unit.v
 FD:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/memory_control_unit.v
 L0 1
@@ -202,7 +180,7 @@ R3
 r1
 !s85 0
 31
-R10
+Z13 !s108 1624999020.000000
 !s107 D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/memory_control_unit.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier|D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/memory_control_unit.v|
 !i113 1
@@ -210,13 +188,13 @@ R5
 R6
 R7
 vmux_16_4inputs
-R9
+R12
 !i10b 1
-!s100 g>F?do6U0ZA9<RB@?Q=^Q1
-I_FRYfXdnV:97@CL:mD9413
+!s100 928JaQlEoSlAC@@]`FOan0
+IQQTzS:zK1V]WE9B7E]zCX0
 R2
 R0
-w1624879555
+w1624893916
 8D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_16_4inputs.v
 FD:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_16_4inputs.v
 L0 1
@@ -224,7 +202,7 @@ R3
 r1
 !s85 0
 31
-R10
+R13
 !s107 D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_16_4inputs.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier|D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_16_4inputs.v|
 !i113 1
@@ -232,7 +210,7 @@ R5
 R6
 R7
 vmux_32
-R1
+R9
 !i10b 1
 !s100 Wh_KhFPSReBAbV>aDXbFU1
 I4hF<E=F8GNEE_i]AKzR693
@@ -246,7 +224,7 @@ R3
 r1
 !s85 0
 31
-R4
+R11
 !s107 D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_32.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier|D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_32.v|
 !i113 1
@@ -256,11 +234,11 @@ R7
 vmux_8
 R1
 !i10b 1
-!s100 IUlefd:TgYKhg8A=X;2?L1
-IRL6IBWQONMmTa_KSlNH]R0
+!s100 8OF0Ij4@<<eIgH@1YZBLU0
+I_Zh2AkMFA;1:b]K?jSJo[0
 R2
 R0
-w1624870740
+w1624893904
 8D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_8.v
 FD:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_8.v
 L0 1
@@ -268,7 +246,7 @@ R3
 r1
 !s85 0
 31
-R10
+R4
 !s107 D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_8.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier|D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_8.v|
 !i113 1
@@ -387,7 +365,7 @@ R6
 R7
 nreg@a@c
 vregCID
-R1
+R9
 !i10b 1
 !s100 e2m:oXkS`=OFS6foSmn^X1
 Iz;ILlCz2?OQFKXg8Jb?WE1
@@ -401,7 +379,7 @@ R3
 r1
 !s85 0
 31
-R4
+R11
 !s107 D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/regCID.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier|D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/regCID.v|
 !i113 1
@@ -410,13 +388,13 @@ R6
 R7
 nreg@c@i@d
 vtb_top
-R1
+R9
 !i10b 1
-!s100 Rb_6HeK40?_Wf7i>M3@>X1
-IbO4]<YE0RPb1SD[DE_6Bc3
+!s100 ?T;7GPnTfZ:^M>lK?>e7=0
+IUg[7UEWfA2zT1Eb=dcjae2
 R2
 R0
-w1624888221
+w1624995156
 8D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/tb_top.v
 FD:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/tb_top.v
 L0 2
@@ -424,7 +402,7 @@ R3
 r1
 !s85 0
 31
-R4
+R11
 !s107 D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/tb_top.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier|D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/tb_top.v|
 !i113 1
@@ -434,11 +412,11 @@ R7
 vtop
 R1
 !i10b 1
-!s100 R:YdR6G:Ez1j>d69UUdQ_2
-I8;dFW?4Fg^`BFI;QgRaUm2
+!s100 Ino[d;f_7>ni3Rz09>DKJ1
+IQ?KZE7NKQiUK_MQ<87g3^1
 R2
 R0
-w1624884045
+w1624992900
 8D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/top.v
 FD:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/top.v
 L0 1

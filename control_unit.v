@@ -1,11 +1,12 @@
 module control_unit (clk, instruction, zflag, start_sig, busy_sig, mux_sig, 
 							load_decode_sig, alu_sig, rst_PC, inc_decode_sig, clear_ac, 
-							dec_ac, iram_read, iram_write, dram_read, dram_write);
+							dec_ac, iram_read, iram_write, dram_read, dram_write, noc);
 
 input clk;
 input [7:0] instruction;
 input zflag;
 input start_sig;
+input [2:0] noc;
 output reg [4:0] mux_sig;
 output reg [3:0] load_decode_sig;
 output reg [3:0] alu_sig;
@@ -44,6 +45,8 @@ parameter ALU_inactive=4'b0000, ALU_add=4'b0010, ALU_mul=4'b0001, ALU_sub=4'b001
 parameter NOP=4'b0000,  CLAC=4'b0001,  LDAC=4'b0010,  STAC=4'b0011, MVR=4'b0100,
 				 MVAC=4'b0101, MUL=4'b0110, ADD=4'b0111, SUB=4'b1000, DIV=4'b1001,
 				 JPNZ=4'b1010, INCAC=4'b1011, DECAC=4'b1100, END=4'b1111;
+				 
+parameter JUMP=4'b0000, LAST=4'b1111;
 					
 parameter LOAD=4'b0000, IA=4'b0001, IB=4'b0010;
 
@@ -66,8 +69,8 @@ parameter FETCH1=7'd0,  FETCH2=7'd1, FETCH3=7'd2, FETCH4=7'd3, NOP1=7'd4,
 			 DUMMY1=7'd55, DUMMY2=7'd56, DUMMY3=7'd57, DUMMY4=7'd58, DUMMY5=7'd59, DUMMY6=7'd60,
 			 DUMMY7=7'd61, DUMMY8=7'd62, DUMMY9=7'd63, DUMMY10=7'd64, DUMMY11=7'd65, DECAC1=7'd66,
 			 DIV_NOC1=7'd67, DIV_CID1=7'd68, MVAC_NOC1=7'd69, MVAC_CLA1=7'd70, MVR_CID1=7'd71, 
-			 MVR_CLA1=7'd72, LDAC10=7'd73, LDAC11=7'd74, 
-			 //LDAC12=7'd75, LDAC13=7'd76, LDAC14=7'd77, LDAC15=7'd78, 
+			 MVR_CLA1=7'd72, LDAC10=7'd73, LDAC11=7'd74, JPNZ_LASTY1=7'd75, JPNZ_LASTY2=7'd76, 
+			 JPNZ_LASTY3=7'd77, JPNZ_LASTN1=7'd78, 
 			 LDAC_IA4=7'd79, LDAC_IA5=7'd80, LDAC_IA6=7'd81, LDAC_IA7=7'd82, LDAC_IB4=7'd83, 
 			 //LDAC_IB6=7'd84, STAC8=7'd85, STAC9=7'd86, STAC10=7'd87, STAC11=7'd88, 
 			 //STAC12=7'd89, STAC13=7'd90, 
@@ -304,15 +307,41 @@ begin
 				
 				JPNZ : 
 				begin	
+				
+					case (instruction[3:0])
 					
-					case (zflag)
+						JUMP :
+						begin
+					
+							case (zflag)
+								
+								1'b0 : state <= JPNZY1;
+								
+								1'b1 : state <= JPNZN1;
+								
+								default : state <= END1;
+								
+							endcase
 						
-						1'b0 : state <= JPNZY1;
+						end
 						
-						1'b1 : state <= JPNZN1;
+						LAST :
+						begin
+					
+							case (zflag)
+								
+								1'b0 : state <= JPNZ_LASTY1;
+								
+								1'b1 : state <= JPNZ_LASTN1;
+								
+								default : state <= END1;
+								
+							endcase
+						
+						end
 						
 						default : state <= END1;
-						
+					
 					endcase
 				
 				end
@@ -564,7 +593,10 @@ begin
 			iram_write <= 1'b0;
 			dram_read <= read_different;
 			dram_write <= write_off;
-			state <= LDAC_IA2;
+			if (noc == 3'd1)
+				state <= LDAC_IA5;
+			else
+				state <= LDAC_IA2;
 		end
 		
 		LDAC_IA2:
@@ -581,7 +613,10 @@ begin
 			iram_write <= 1'b0;
 			dram_read <= read_different;
 			dram_write <= write_off;
-			state <= LDAC_IA3;
+			if (noc == 3'd2)
+				state <= LDAC_IA5;
+			else
+				state <= LDAC_IA3;
 		end
 		
 		LDAC_IA3:
@@ -598,7 +633,10 @@ begin
 			iram_write <= 1'b0;
 			dram_read <= read_different;
 			dram_write <= write_off;
-			state <= LDAC_IA4;
+			if (noc == 3'd3)
+				state <= LDAC_IA5;
+			else
+				state <= LDAC_IA4;
 		end
 		
 		LDAC_IA4:
@@ -887,7 +925,10 @@ begin
 			iram_write <= 1'b0;
 			dram_read <= read_off;
 			dram_write <= write_different;
-			state <= STAC_IC3;
+			if (noc == 3'd1)
+				state <= STAC_IC6;
+			else
+				state <= STAC_IC3;
 		end
 		
 		STAC_IC3:
@@ -904,7 +945,10 @@ begin
 			iram_write <= 1'b0;
 			dram_read <= read_off;
 			dram_write <= write_different;
-			state <= STAC_IC4;
+			if (noc == 3'd2)
+				state <= STAC_IC6;
+			else
+				state <= STAC_IC4;
 		end
 		
 		STAC_IC4:
@@ -921,7 +965,10 @@ begin
 			iram_write <= 1'b0;
 			dram_read <= read_off;
 			dram_write <= write_different;
-			state <= STAC_IC5;
+			if (noc == 3'd3)
+				state <= STAC_IC6;
+			else
+				state <= STAC_IC5;
 		end
 		
 		STAC_IC5:
@@ -972,7 +1019,10 @@ begin
 			iram_write <= 1'b0;
 			dram_read <= read_off;
 			dram_write <= write_different;
-			state <= STAC_IC8;  
+			if (noc == 3'd1)
+				state <= FETCH1;
+			else
+				state <= STAC_IC8;  
 		end
 		
 		STAC_IC8:
@@ -989,7 +1039,10 @@ begin
 			iram_write <= 1'b0;
 			dram_read <= read_off;
 			dram_write <= write_different;
-			state <= STAC_IC9;
+			if (noc == 3'd2)
+				state <= FETCH1;
+			else
+				state <= STAC_IC9;
 		end
 		
 		STAC_IC9:
@@ -1006,7 +1059,10 @@ begin
 			iram_write <= 1'b0;
 			dram_read <= read_off;
 			dram_write <= write_different;
-			state <= STAC_IC10;
+			if (noc == 3'd3)
+				state <= FETCH1;
+			else
+				state <= STAC_IC10;
 		end
 		
 		STAC_IC10:
@@ -1639,6 +1695,74 @@ begin
 		end
 		
 		JPNZN1:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_PC;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
+			state <= FETCH1;
+		end
+		
+		JPNZ_LASTY1:
+		begin
+			mux_sig <= sel_none;
+			load_decode_sig <= load_off;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b1;
+			iram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
+			state <= JPNZ_LASTY2;
+		end
+		
+		JPNZ_LASTY2:
+		begin
+			mux_sig <= sel_iram;
+			load_decode_sig <= load_DR;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
+			state <= JPNZ_LASTY3;
+		end
+		
+		JPNZ_LASTY3:
+		begin
+			mux_sig <= sel_DR;
+			load_decode_sig <= load_PC;
+			alu_sig <= ALU_inactive;
+			inc_decode_sig <= inc_off;
+			busy_sig <= 1'b1;
+			rst_PC <= 1'b0;
+			clear_ac <= 1'b0;
+			dec_ac <= 1'b0;
+			iram_read <= 1'b0;
+			iram_write <= 1'b0;
+			dram_read <= read_off;
+			dram_write <= write_off;
+			state <= END1;
+		end
+		
+		JPNZ_LASTN1:
 		begin
 			mux_sig <= sel_none;
 			load_decode_sig <= load_off;

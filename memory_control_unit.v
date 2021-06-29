@@ -1,6 +1,6 @@
 module memory_control_unit(i_clk, i_read, i_write, i_ar1, i_ar2, i_ar3, i_ar4 , 
-										i_dr1, i_dr2, i_dr3, i_dr4, 
-										o_dr1, o_dr2, o_dr3, o_dr4);
+										i_dr1, i_dr2, i_dr3, i_dr4, o_dr1, o_dr2, o_dr3, o_dr4, i_noc);
+
 input i_clk;
 input [1:0] i_read;
 input [1:0] i_write;
@@ -12,6 +12,7 @@ input [7:0] i_dr1;
 input [7:0] i_dr2;
 input [7:0] i_dr3;
 input [7:0] i_dr4;
+input [2:0] i_noc;
 output [7:0] o_dr1;
 output [7:0] o_dr2;
 output [7:0] o_dr3;
@@ -65,17 +66,27 @@ begin
 			begin
 				if (i_write[1] == 1'b1)
 				begin
-					state<=write_different1;
-					mux_address_sig<=2'b01;
-					mux_data_out_sig<=4'b0000;
-					mux_data_in_sig<=2'b01;
+					if (i_noc == 3'd1)
+					begin
+						state<=idle;
+						mux_address_sig<=2'b00;
+						mux_data_in_sig<=2'b00;
+						mux_data_out_sig<=4'b0000;
+					end
+					else
+					begin
+						state<=write_different1;
+						mux_address_sig<=2'b01;
+						mux_data_in_sig<=2'b01;
+						mux_data_out_sig<=4'b0000;
+					end
 				end
 				else
 				begin 
 					state<=idle;
 					mux_address_sig<=2'b00;
-					mux_data_out_sig<=4'b0000;
 					mux_data_in_sig<=2'b00;
+					mux_data_out_sig<=4'b0000;
 				end
 			end
 			
@@ -83,17 +94,27 @@ begin
 			begin
 				if (i_read[1] == 1'b1)
 				begin
-					state<=read_different1;
-					mux_address_sig<=2'b01;
-					mux_data_out_sig<=4'b0001;
-					mux_data_in_sig<=2'b01;
+					if (i_noc == 3'd1)
+					begin
+						state<=idle;
+						mux_address_sig<=2'b00;
+						mux_data_in_sig<=2'b00;
+						mux_data_out_sig<=4'b0001;
+					end
+					else
+					begin
+						state<=read_different1;
+						mux_address_sig<=2'b01;
+						mux_data_in_sig<=2'b01;
+						mux_data_out_sig<=4'b0001;
+					end
 				end
 				else
 				begin 
 					state<=idle;
 					mux_address_sig<=2'b00;
-					mux_data_out_sig<=4'b1111;
 					mux_data_in_sig<=2'b00;
+					mux_data_out_sig<=4'b1111;
 				end
 			end
 			
@@ -101,74 +122,108 @@ begin
 			begin
 				state<=idle;
 				mux_address_sig<=2'b00;
-				mux_data_out_sig<=4'b0000;
 				mux_data_in_sig<=2'b00;
+				mux_data_out_sig<=4'b0000;
 			end
 			
 		end
 		
 		read_different1:
 		begin
-		
-			mux_data_out_sig<=4'b0010;
-			mux_address_sig<=2'b10;
-			state<=read_different2;
 			
-			mux_data_in_sig<=2'b10;
+			if (i_noc == 3'd2)
+			begin
+				state<=idle;
+				mux_address_sig<=2'b00;
+				mux_data_in_sig<=2'b00;
+				mux_data_out_sig<=4'b0010;
+			end
+			else
+			begin
+				state<=read_different2;
+				mux_address_sig<=2'b10;
+				mux_data_in_sig<=2'b10;
+				mux_data_out_sig<=4'b0010;
+			end
 			
 		end
 		
 		read_different2:
 		begin
 		
-			mux_data_out_sig<=4'b0100;
-			mux_address_sig<=2'b11;
-			state<=read_different3;
-			
-			mux_data_in_sig<=2'b11;
+			if (i_noc == 3'd3)
+			begin
+				state<=idle;
+				mux_address_sig<=2'b00;			
+				mux_data_in_sig<=2'b00;			
+				mux_data_out_sig<=4'b0100;
+			end
+			else
+			begin
+				state<=read_different3;
+				mux_address_sig<=2'b11;			
+				mux_data_in_sig<=2'b11;			
+				mux_data_out_sig<=4'b0100;
+			end
 			
 		end
 		
 		read_different3:
 		begin
 		
-			mux_data_out_sig<=4'b1000;
-			mux_address_sig<=2'b00;
 			state<=idle;
-			
+			mux_address_sig<=2'b00;
 			mux_data_in_sig<=2'b00;
+			mux_data_out_sig<=4'b1000;
 			
 		end
 		
 		write_different1:
 		begin
 		
-			mux_data_in_sig<=2'b10;
-			mux_address_sig<=2'b10;
-			state<=write_different2;
-			
-			mux_data_out_sig<=4'b0000;
+			if (i_noc == 3'd2)
+			begin
+				state<=idle;
+				mux_address_sig<=2'b00;
+				mux_data_in_sig<=2'b00;			
+				mux_data_out_sig<=4'b0000;
+			end
+			else
+			begin
+				state<=write_different2;
+				mux_address_sig<=2'b10;
+				mux_data_in_sig<=2'b10;			
+				mux_data_out_sig<=4'b0000;
+			end
 			
 		end
 		
 		write_different2:
 		begin
-		
-			mux_data_in_sig<=2'b11;
-			mux_address_sig<=2'b11;
-			state<=write_different3;
 			
-			mux_data_out_sig<=4'b0000;
+			if (i_noc == 3'd3)
+			begin
+				state<=idle;
+				mux_address_sig<=2'b00;
+				mux_data_in_sig<=2'b00;			
+				mux_data_out_sig<=4'b0000;
+			end
+			else
+			begin
+				state<=write_different3;
+				mux_address_sig<=2'b11;
+				mux_data_in_sig<=2'b11;			
+				mux_data_out_sig<=4'b0000;
+			end
 			
 		end
 		
 		write_different3:
 		begin
 		
-			mux_data_in_sig<=2'b00;
-			mux_address_sig<=2'b00;
 			state<=idle;
-			
+			mux_address_sig<=2'b00;
+			mux_data_in_sig<=2'b00;			
 			mux_data_out_sig<=4'b0000;
 			
 		end
