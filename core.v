@@ -67,7 +67,8 @@ wire load_NOC;
 
 wire zflag;
 wire [15:0] alu_in;
-wire [3:0] alu_control;
+wire [2:0] alu_control;
+wire alu_load;
 
 wire [7:0] instruction;
 wire [4:0] mux_sig; 
@@ -92,7 +93,7 @@ reg16     CLA (.clk(neg_clk), .load(load_CLA), .data_in(mux_out), .data_out(mux_
 reg8 		 NOC (.clk(neg_clk), .load(load_NOC), .data_in(mux_out[7:0]), .data_out(mux_in_NOC));
 regCID 	#(.core_id(core_id)) CID (.clk(neg_clk), .data_out(mux_in_CID)); 
 
-regAC AC (.clk(neg_clk), .alu_load(alu_control[3]), .mux_load(load_AC), .inc(inc_AC), .clear(clear_AC), 
+regAC AC (.clk(neg_clk), .alu_load(alu_load), .mux_load(load_AC), .inc(inc_AC), .clear(clear_AC), 
 											.dec(dec_AC), .alu_in(alu_in), .mux_in(mux_out), .data_out(mux_in_AC));
 
 mux_32 data_bus (.in0({dummy_8, mux_in_DR}), .in1(mux_in_PR), .in2(mux_in_SR), 
@@ -112,7 +113,7 @@ decoder_4to16 load_sig (.in_sig(load_decode_sig), .out_sig({load_NOC, load_CLA, 
 
 decoder_3to8 increase_sig (.in_sig(inc_decode_sig), .out_sig({inc_AR, inc_AC, inc_C, inc_B, inc_A, inc_R, inc_PC}));						
 						
-ALU ALU_ins (.clk(neg_clk), .in1(mux_in_AC), .in2(mux_out), .alu_control(alu_control[2:0]), .out(alu_in), .zflag(zflag));
+ALU ALU_ins (.clk(neg_clk), .in1(mux_in_AC), .in2(mux_out), .alu_control(alu_control), .out(alu_in), .zflag(zflag), .ac_load(alu_load));
 
 control_unit CU (.clk(i_clk), .instruction(instruction), .zflag(zflag), .start_sig(i_start),
 						.busy_sig(o_busy), .mux_sig(mux_sig), .load_decode_sig(load_decode_sig), 

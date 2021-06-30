@@ -37,17 +37,12 @@ reg8 DR4 (.clk(neg_clk), .load(mux_data_out_sig[3]), .data_in(dram_data_out), .d
 parameter idle=4'd0, read_different1=4'd1, read_different2=4'd2, read_different3=4'd3,
 				write_different1=4'd4, write_different2=4'd5, write_different3=4'd6;
 
-//mux_signal?
 mux_8 data_in (.in0(i_dr1), .in1(i_dr2), .in2(i_dr3), 
 						.in3(i_dr4), .sel(mux_data_in_sig), .out(dram_data_in));
 
 					
 mux_16_4inputs data_address (.in0(i_ar1), .in1(i_ar2), .in2(i_ar3), 
-						.in3(i_ar4), .sel(mux_address_sig), .out(dram_address));
-						
-//sel						
-//demux_8 data_out(.clk(neg_clk), .in(dram_data_out), .out0(o_dr1), .out1(o_dr2), .out2(o_dr3),
-//						.out3(o_dr4), .sel(mux_data_out_sig)) ;						
+						.in3(i_ar4), .sel(mux_address_sig), .out(dram_address));					
 						
 DRAM dram(.address(dram_address), .clock(i_clk), .data(dram_data_in), 
 				.rden(i_read[0]), .wren(i_write[0]), .q(dram_data_out));	
