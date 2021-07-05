@@ -1,11 +1,6 @@
 |top
-i_clk => clk.CLK
-i_clk => count[0].CLK
-i_clk => count[1].CLK
-i_start => core:core1.i_start
-i_start => core:core2.i_start
-i_start => core:core3.i_start
-i_start => core:core4.i_start
+i_clk => i_clk.IN1
+i_start => i_start.IN4
 o_busy_1 <= core:core1.o_busy
 o_busy_2 <= core:core2.o_busy
 o_busy_3 <= core:core3.o_busy
@@ -12985,5 +12980,12 @@ noc[1] => Equal9.IN0
 noc[2] => Equal7.IN1
 noc[2] => Equal8.IN1
 noc[2] => Equal9.IN2
+
+
+|top|clock_divider:clock_divide_ins
+i_clk => o_clk~reg0.CLK
+i_clk => count[0].CLK
+i_clk => count[1].CLK
+o_clk <= o_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

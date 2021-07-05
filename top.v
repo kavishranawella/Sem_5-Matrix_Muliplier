@@ -29,8 +29,7 @@ wire iram_write_4, iram_read_4;
 wire [1:0] dram_write_4, dram_read_4;
 wire [2:0] noc_4;
 
-reg clk = 1'b0;
-reg [1:0] count=2'd0;
+wire clk;
 
 memory_control_unit MCU (.i_clk(clk), .i_read(dram_read_1), .i_write(dram_write_1), 
 									.i_ar1(dram_addr_1), .i_ar2(dram_addr_2), .i_ar3(dram_addr_3), 
@@ -73,15 +72,6 @@ core #(.core_id(3)) core4 (.i_clk(clk), .i_start(i_start), .i_dram_in(dram_data_
 				.o_iram_read(iram_read_4), .o_iram_write(iram_write_4), 
 				.o_iram_out(iram_data_in_4), .o_busy(o_busy_4), .o_noc(noc_4));  
 				
-always @(posedge i_clk)
-begin
-	if (count == 2'd3)
-	begin
-		count <= 2'd0;
-		clk <= ~clk;
-	end
-	else
-		count <= count + 2'd1;
-end
+clock_divider clock_divide_ins (.i_clk(i_clk), .o_clk(clk)); 
 					
 endmodule
