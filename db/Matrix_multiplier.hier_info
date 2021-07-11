@@ -1,10 +1,10 @@
 |top
 i_clk => i_clk.IN1
 i_start => i_start.IN4
-o_busy_1 <= core:core1.o_busy
-o_busy_2 <= core:core2.o_busy
-o_busy_3 <= core:core3.o_busy
-o_busy_4 <= core:core4.o_busy
+o_busy_1 << core:core1.o_busy
+o_busy_2 << core:core2.o_busy
+o_busy_3 << core:core3.o_busy
+o_busy_4 << core:core4.o_busy
 
 
 |top|memory_control_unit:MCU

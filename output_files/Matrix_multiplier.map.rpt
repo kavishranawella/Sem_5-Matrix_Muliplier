@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Matrix_multiplier
-Sun Jul 11 13:01:22 2021
+Sun Jul 11 16:14:11 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -93,7 +93,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jul 11 13:01:22 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sun Jul 11 16:14:11 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Matrix_multiplier                           ;
 ; Top-level Entity Name              ; top                                         ;
@@ -253,9 +253,9 @@ refer to the applicable agreement for further details.
 ; altram.inc                                             ; yes             ; Megafunction                                          ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                                              ;         ;
 ; altdpram.inc                                           ; yes             ; Megafunction                                          ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                                            ;         ;
 ; db/altsyncram_t791.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/db/altsyncram_t791.tdf                                 ;         ;
-; db/Matrix_multiplier.ram0_IRAM_module_e9e86a49.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/db/Matrix_multiplier.ram0_IRAM_module_e9e86a49.hdl.mif ;         ;
+; db/matrix_multiplier.ram0_iram_module_e9e86a49.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/db/matrix_multiplier.ram0_iram_module_e9e86a49.hdl.mif ;         ;
 ; db/altsyncram_aqj1.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/db/altsyncram_aqj1.tdf                                 ;         ;
-; db/Matrix_multiplier.ram0_DRAM_module_625a4878.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/db/Matrix_multiplier.ram0_DRAM_module_625a4878.hdl.mif ;         ;
+; db/matrix_multiplier.ram0_dram_module_625a4878.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/db/matrix_multiplier.ram0_dram_module_625a4878.hdl.mif ;         ;
 ; lpm_divide.tdf                                         ; yes             ; Megafunction                                          ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf                                          ;         ;
 ; abs_divider.inc                                        ; yes             ; Megafunction                                          ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/abs_divider.inc                                         ;         ;
 ; sign_div_unsign.inc                                    ; yes             ; Megafunction                                          ; d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                     ;         ;
@@ -2420,7 +2420,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:07     ;
+; Top            ; 00:00:13     ;
 +----------------+--------------+
 
 
@@ -2430,7 +2430,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Jul 11 13:00:59 2021
+    Info: Processing started: Sun Jul 11 16:13:35 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Matrix_multiplier -c Matrix_multiplier
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file dram_module.v
@@ -2577,8 +2577,6 @@ Info (12133): Instantiated megafunction "IRAM_module:iram|altsyncram:memory_rtl_
     Info (12134): Parameter "INIT_FILE" = "db/Matrix_multiplier.ram0_IRAM_module_e9e86a49.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_t791.tdf
     Info (12023): Found entity 1: altsyncram_t791 File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/db/altsyncram_t791.tdf Line: 27
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/db/Matrix_multiplier.ram0_IRAM_module_e9e86a49.hdl.mif" contains "don't care" values -- overwriting them with 0s File: d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/db/Matrix_multiplier.ram0_IRAM_module_e9e86a49.hdl.mif" contains "don't care" values -- overwriting them with 0s File: d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12130): Elaborated megafunction instantiation "memory_control_unit:MCU|DRAM_module:dram|altsyncram:memory_rtl_0"
 Info (12133): Instantiated megafunction "memory_control_unit:MCU|DRAM_module:dram|altsyncram:memory_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -2598,8 +2596,6 @@ Info (12133): Instantiated megafunction "memory_control_unit:MCU|DRAM_module:dra
     Info (12134): Parameter "INIT_FILE" = "db/Matrix_multiplier.ram0_DRAM_module_625a4878.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_aqj1.tdf
     Info (12023): Found entity 1: altsyncram_aqj1 File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/db/altsyncram_aqj1.tdf Line: 27
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/db/Matrix_multiplier.ram0_DRAM_module_625a4878.hdl.mif" contains "don't care" values -- overwriting them with 0s File: d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/db/Matrix_multiplier.ram0_DRAM_module_625a4878.hdl.mif" contains "don't care" values -- overwriting them with 0s File: d:/installed_software/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12130): Elaborated megafunction instantiation "core:core1|ALU:ALU_ins|lpm_divide:Div0" File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/ALU.v Line: 50
 Info (12133): Instantiated megafunction "core:core1|ALU:ALU_ins|lpm_divide:Div0" with the following parameter: File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/ALU.v Line: 50
     Info (12134): Parameter "LPM_WIDTHN" = "16"
@@ -2641,11 +2637,11 @@ Info (21057): Implemented 4261 device resources after synthesis - the final reso
     Info (21061): Implemented 4231 logic cells
     Info (21064): Implemented 16 RAM segments
     Info (21062): Implemented 8 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4808 megabytes
-    Info: Processing ended: Sun Jul 11 13:01:22 2021
-    Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:44
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4821 megabytes
+    Info: Processing ended: Sun Jul 11 16:14:11 2021
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:00:58
 
 
 +------------------------------------------+

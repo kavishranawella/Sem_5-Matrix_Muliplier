@@ -96,6 +96,9 @@ def compile_data():
     f0 = open("dram.mem", "w")
     f0.write(to_DRAM)
     f0.close()
+    f2 = open("./simulation/modelsim/dram.mem", "w")
+    f2.write(to_DRAM)
+    f2.close()
 
     global c_from_python
     c_from_python = [[0]*input_3_cols_B for i in range(input_1_rows_A)]
@@ -108,7 +111,7 @@ def compile_data():
 
 def verify():
     label.configure(text="Verification Test Results")
-    f1 = open("DRAM_out.mem", "r")
+    f1 = open("./simulation/modelsim/DRAM_out.mem", "r")
     C_matrix = []
     C_matrix_temp = f1.read().split()
     f1.close()
