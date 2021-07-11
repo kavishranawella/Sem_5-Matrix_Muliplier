@@ -1,6 +1,6 @@
 // Single (standalone) core module
 
-module core #(parameter [7:0] core_id = 1) (i_clk, i_start, i_dram_in, i_iram_in, o_dram_addr, o_dram_read,
+module core #(parameter core_id = 0) (i_clk, i_start, i_dram_in, i_iram_in, o_dram_addr, o_dram_read,
 					o_dram_write, o_dram_out, o_iram_addr, o_iram_read, 
 					o_iram_write, o_iram_out, o_busy, o_noc); 
 
