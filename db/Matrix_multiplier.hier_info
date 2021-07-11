@@ -1,10 +1,10 @@
 |top
 i_clk => i_clk.IN1
 i_start => i_start.IN4
-o_busy_1 <= core:core1.o_busy
-o_busy_2 <= core:core2.o_busy
-o_busy_3 <= core:core3.o_busy
-o_busy_4 <= core:core4.o_busy
+o_busy_1 << core:core1.o_busy
+o_busy_2 << core:core2.o_busy
+o_busy_3 << core:core3.o_busy
+o_busy_4 << core:core4.o_busy
 
 
 |top|memory_control_unit:MCU
@@ -4449,14 +4449,14 @@ o_dram_out[4] <= mux_in_DR[4].DB_MAX_OUTPUT_PORT_TYPE
 o_dram_out[5] <= mux_in_DR[5].DB_MAX_OUTPUT_PORT_TYPE
 o_dram_out[6] <= mux_in_DR[6].DB_MAX_OUTPUT_PORT_TYPE
 o_dram_out[7] <= mux_in_DR[7].DB_MAX_OUTPUT_PORT_TYPE
-o_iram_addr[0] <= reg8_inc:PC.data_out
-o_iram_addr[1] <= reg8_inc:PC.data_out
-o_iram_addr[2] <= reg8_inc:PC.data_out
-o_iram_addr[3] <= reg8_inc:PC.data_out
-o_iram_addr[4] <= reg8_inc:PC.data_out
-o_iram_addr[5] <= reg8_inc:PC.data_out
-o_iram_addr[6] <= reg8_inc:PC.data_out
-o_iram_addr[7] <= reg8_inc:PC.data_out
+o_iram_addr[0] <= regPC:PC.data_out
+o_iram_addr[1] <= regPC:PC.data_out
+o_iram_addr[2] <= regPC:PC.data_out
+o_iram_addr[3] <= regPC:PC.data_out
+o_iram_addr[4] <= regPC:PC.data_out
+o_iram_addr[5] <= regPC:PC.data_out
+o_iram_addr[6] <= regPC:PC.data_out
+o_iram_addr[7] <= regPC:PC.data_out
 o_iram_read <= control_unit:CU.iram_read
 o_iram_write <= control_unit:CU.iram_write
 o_iram_out[0] <= mux_in_DR[0].DB_MAX_OUTPUT_PORT_TYPE
@@ -4473,7 +4473,7 @@ o_noc[1] <= mux_in_NOC[1].DB_MAX_OUTPUT_PORT_TYPE
 o_noc[2] <= mux_in_NOC[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|core:core1|reg8_inc:PC
+|top|core:core1|regPC:PC
 clk => data_out[0]~reg0.CLK
 clk => data_out[1]~reg0.CLK
 clk => data_out[2]~reg0.CLK
@@ -6510,7 +6510,8 @@ instruction[7] => Decoder2.IN0
 instruction[7] => Mux0.IN16
 zflag => Decoder1.IN0
 start_sig => Selector3.IN4
-start_sig => state.DATAB
+start_sig => rst_PC.DATAB
+start_sig => Selector0.IN5
 busy_sig <= busy_sig~reg0.DB_MAX_OUTPUT_PORT_TYPE
 mux_sig[0] <= mux_sig[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 mux_sig[1] <= mux_sig[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -6594,14 +6595,14 @@ o_dram_out[4] <= mux_in_DR[4].DB_MAX_OUTPUT_PORT_TYPE
 o_dram_out[5] <= mux_in_DR[5].DB_MAX_OUTPUT_PORT_TYPE
 o_dram_out[6] <= mux_in_DR[6].DB_MAX_OUTPUT_PORT_TYPE
 o_dram_out[7] <= mux_in_DR[7].DB_MAX_OUTPUT_PORT_TYPE
-o_iram_addr[0] <= reg8_inc:PC.data_out
-o_iram_addr[1] <= reg8_inc:PC.data_out
-o_iram_addr[2] <= reg8_inc:PC.data_out
-o_iram_addr[3] <= reg8_inc:PC.data_out
-o_iram_addr[4] <= reg8_inc:PC.data_out
-o_iram_addr[5] <= reg8_inc:PC.data_out
-o_iram_addr[6] <= reg8_inc:PC.data_out
-o_iram_addr[7] <= reg8_inc:PC.data_out
+o_iram_addr[0] <= regPC:PC.data_out
+o_iram_addr[1] <= regPC:PC.data_out
+o_iram_addr[2] <= regPC:PC.data_out
+o_iram_addr[3] <= regPC:PC.data_out
+o_iram_addr[4] <= regPC:PC.data_out
+o_iram_addr[5] <= regPC:PC.data_out
+o_iram_addr[6] <= regPC:PC.data_out
+o_iram_addr[7] <= regPC:PC.data_out
 o_iram_read <= control_unit:CU.iram_read
 o_iram_write <= control_unit:CU.iram_write
 o_iram_out[0] <= mux_in_DR[0].DB_MAX_OUTPUT_PORT_TYPE
@@ -6618,7 +6619,7 @@ o_noc[1] <= mux_in_NOC[1].DB_MAX_OUTPUT_PORT_TYPE
 o_noc[2] <= mux_in_NOC[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|core:core2|reg8_inc:PC
+|top|core:core2|regPC:PC
 clk => data_out[0]~reg0.CLK
 clk => data_out[1]~reg0.CLK
 clk => data_out[2]~reg0.CLK
@@ -8655,7 +8656,8 @@ instruction[7] => Decoder2.IN0
 instruction[7] => Mux0.IN16
 zflag => Decoder1.IN0
 start_sig => Selector3.IN4
-start_sig => state.DATAB
+start_sig => rst_PC.DATAB
+start_sig => Selector0.IN5
 busy_sig <= busy_sig~reg0.DB_MAX_OUTPUT_PORT_TYPE
 mux_sig[0] <= mux_sig[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 mux_sig[1] <= mux_sig[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -8739,14 +8741,14 @@ o_dram_out[4] <= mux_in_DR[4].DB_MAX_OUTPUT_PORT_TYPE
 o_dram_out[5] <= mux_in_DR[5].DB_MAX_OUTPUT_PORT_TYPE
 o_dram_out[6] <= mux_in_DR[6].DB_MAX_OUTPUT_PORT_TYPE
 o_dram_out[7] <= mux_in_DR[7].DB_MAX_OUTPUT_PORT_TYPE
-o_iram_addr[0] <= reg8_inc:PC.data_out
-o_iram_addr[1] <= reg8_inc:PC.data_out
-o_iram_addr[2] <= reg8_inc:PC.data_out
-o_iram_addr[3] <= reg8_inc:PC.data_out
-o_iram_addr[4] <= reg8_inc:PC.data_out
-o_iram_addr[5] <= reg8_inc:PC.data_out
-o_iram_addr[6] <= reg8_inc:PC.data_out
-o_iram_addr[7] <= reg8_inc:PC.data_out
+o_iram_addr[0] <= regPC:PC.data_out
+o_iram_addr[1] <= regPC:PC.data_out
+o_iram_addr[2] <= regPC:PC.data_out
+o_iram_addr[3] <= regPC:PC.data_out
+o_iram_addr[4] <= regPC:PC.data_out
+o_iram_addr[5] <= regPC:PC.data_out
+o_iram_addr[6] <= regPC:PC.data_out
+o_iram_addr[7] <= regPC:PC.data_out
 o_iram_read <= control_unit:CU.iram_read
 o_iram_write <= control_unit:CU.iram_write
 o_iram_out[0] <= mux_in_DR[0].DB_MAX_OUTPUT_PORT_TYPE
@@ -8763,7 +8765,7 @@ o_noc[1] <= mux_in_NOC[1].DB_MAX_OUTPUT_PORT_TYPE
 o_noc[2] <= mux_in_NOC[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|core:core3|reg8_inc:PC
+|top|core:core3|regPC:PC
 clk => data_out[0]~reg0.CLK
 clk => data_out[1]~reg0.CLK
 clk => data_out[2]~reg0.CLK
@@ -10800,7 +10802,8 @@ instruction[7] => Decoder2.IN0
 instruction[7] => Mux0.IN16
 zflag => Decoder1.IN0
 start_sig => Selector3.IN4
-start_sig => state.DATAB
+start_sig => rst_PC.DATAB
+start_sig => Selector0.IN5
 busy_sig <= busy_sig~reg0.DB_MAX_OUTPUT_PORT_TYPE
 mux_sig[0] <= mux_sig[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 mux_sig[1] <= mux_sig[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -10884,14 +10887,14 @@ o_dram_out[4] <= mux_in_DR[4].DB_MAX_OUTPUT_PORT_TYPE
 o_dram_out[5] <= mux_in_DR[5].DB_MAX_OUTPUT_PORT_TYPE
 o_dram_out[6] <= mux_in_DR[6].DB_MAX_OUTPUT_PORT_TYPE
 o_dram_out[7] <= mux_in_DR[7].DB_MAX_OUTPUT_PORT_TYPE
-o_iram_addr[0] <= reg8_inc:PC.data_out
-o_iram_addr[1] <= reg8_inc:PC.data_out
-o_iram_addr[2] <= reg8_inc:PC.data_out
-o_iram_addr[3] <= reg8_inc:PC.data_out
-o_iram_addr[4] <= reg8_inc:PC.data_out
-o_iram_addr[5] <= reg8_inc:PC.data_out
-o_iram_addr[6] <= reg8_inc:PC.data_out
-o_iram_addr[7] <= reg8_inc:PC.data_out
+o_iram_addr[0] <= regPC:PC.data_out
+o_iram_addr[1] <= regPC:PC.data_out
+o_iram_addr[2] <= regPC:PC.data_out
+o_iram_addr[3] <= regPC:PC.data_out
+o_iram_addr[4] <= regPC:PC.data_out
+o_iram_addr[5] <= regPC:PC.data_out
+o_iram_addr[6] <= regPC:PC.data_out
+o_iram_addr[7] <= regPC:PC.data_out
 o_iram_read <= control_unit:CU.iram_read
 o_iram_write <= control_unit:CU.iram_write
 o_iram_out[0] <= mux_in_DR[0].DB_MAX_OUTPUT_PORT_TYPE
@@ -10908,7 +10911,7 @@ o_noc[1] <= mux_in_NOC[1].DB_MAX_OUTPUT_PORT_TYPE
 o_noc[2] <= mux_in_NOC[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|core:core4|reg8_inc:PC
+|top|core:core4|regPC:PC
 clk => data_out[0]~reg0.CLK
 clk => data_out[1]~reg0.CLK
 clk => data_out[2]~reg0.CLK
@@ -12945,7 +12948,8 @@ instruction[7] => Decoder2.IN0
 instruction[7] => Mux0.IN16
 zflag => Decoder1.IN0
 start_sig => Selector3.IN4
-start_sig => state.DATAB
+start_sig => rst_PC.DATAB
+start_sig => Selector0.IN5
 busy_sig <= busy_sig~reg0.DB_MAX_OUTPUT_PORT_TYPE
 mux_sig[0] <= mux_sig[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 mux_sig[1] <= mux_sig[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE

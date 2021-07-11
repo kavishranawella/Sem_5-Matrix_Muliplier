@@ -1,5 +1,5 @@
 Flow report for Matrix_multiplier
-Mon Jul 05 11:19:23 2021
+Wed Jul 07 21:13:20 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Jul 05 11:19:23 2021       ;
+; Flow Status                        ; Successful - Wed Jul 07 21:13:20 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Matrix_multiplier                           ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 4,268 / 114,480 ( 4 % )                     ;
-;     Total combinational functions  ; 4,135 / 114,480 ( 4 % )                     ;
-;     Dedicated logic registers      ; 1,553 / 114,480 ( 1 % )                     ;
-; Total registers                    ; 1553                                        ;
+; Total logic elements               ; 4,250 / 114,480 ( 4 % )                     ;
+;     Total combinational functions  ; 4,132 / 114,480 ( 4 % )                     ;
+;     Dedicated logic registers      ; 1,549 / 114,480 ( 1 % )                     ;
+; Total registers                    ; 1549                                        ;
 ; Total pins                         ; 6 / 529 ( 1 % )                             ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 526,336 / 3,981,312 ( 13 % )                ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/05/2021 11:16:22 ;
+; Start date & time ; 07/07/2021 21:11:43 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Matrix_multiplier   ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+-------------------+-------------+----------------+
 ; Assignment Name                      ; Value                                  ; Default Value     ; Entity Name ; Section Id     ;
 +--------------------------------------+----------------------------------------+-------------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 1097532114921.162546398101112          ; --                ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 1097532114921.162567250321660          ; --                ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --                ; --          ; tb_test        ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --                ; --          ; tb_top         ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_top                                 ; --                ; --          ; eda_simulation ;
@@ -111,12 +111,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:12     ; 1.0                     ; 4871 MB             ; 00:01:53                           ;
-; Fitter               ; 00:00:50     ; 1.0                     ; 5812 MB             ; 00:00:59                           ;
-; Assembler            ; 00:00:10     ; 1.0                     ; 4700 MB             ; 00:00:09                           ;
-; Timing Analyzer      ; 00:00:09     ; 1.2                     ; 4884 MB             ; 00:00:09                           ;
-; EDA Netlist Writer   ; 00:00:24     ; 1.0                     ; 4707 MB             ; 00:00:13                           ;
-; Total                ; 00:02:45     ; --                      ; --                  ; 00:03:23                           ;
+; Analysis & Synthesis ; 00:00:47     ; 1.0                     ; 4856 MB             ; 00:01:29                           ;
+; Fitter               ; 00:00:26     ; 1.1                     ; 5741 MB             ; 00:00:43                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 4700 MB             ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.4                     ; 4893 MB             ; 00:00:04                           ;
+; EDA Netlist Writer   ; 00:00:10     ; 1.0                     ; 4706 MB             ; 00:00:06                           ;
+; Total                ; 00:01:31     ; --                      ; --                  ; 00:02:26                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
