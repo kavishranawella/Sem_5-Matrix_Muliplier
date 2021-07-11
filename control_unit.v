@@ -1,3 +1,5 @@
+// Control unit module
+
 module control_unit (clk, instruction, zflag, start_sig, busy_sig, mux_sig, 
 							load_decode_sig, alu_sig, rst_PC, inc_decode_sig, clear_ac, 
 							dec_ac, iram_read, iram_write, dram_read, dram_write, noc);
@@ -20,28 +22,34 @@ output reg iram_write;
 output reg [1:0] dram_read;
 output reg [1:0] dram_write;
 
-reg [6:0] state = 7'd76;
+// Initial State
+reg [6:0] state = 7'd76; 
 
 parameter read_off=2'b00, read_same=2'b01, read_different=2'b11;
 parameter write_off=2'b00, write_same=2'b01, write_different=2'b11;
 
+// Register Loading
 parameter load_off=4'b0000, load_PC=4'b0001, load_IR=4'b0010, load_AR=4'b0011,
 				load_DR=4'b0100, load_PR=4'b0101, load_SR=4'b0110, load_CDR=4'b0111,
 				load_R=4'b1000, load_TR=4'b1001, load_A=4'b1010, load_B=4'b1011,
 				load_C=4'b1100, load_AC=4'b1101, load_CLA=4'b1110, load_NOC=4'b1111;
 
+// Input to Data Bus
 parameter sel_DR=5'b00000, sel_PR=5'b00001, sel_SR=5'b00010, sel_CDR=5'b00011,
 				sel_R=5'b00100, sel_TR=5'b00101, sel_A=5'b00110, sel_B=5'b00111,
 				sel_C=5'b01000, sel_AC=5'b01001, sel_dram=5'b01010, sel_iram=5'b01011,
 				sel_DRTR=5'b01100, sel_ACinv=5'b01101, sel_CLA=5'b01110,
 				sel_NOC=5'b01111, sel_CID=5'b10000, sel_none=5'b11111;
-				
+
+// Register Increment		
 parameter inc_off=3'b000, inc_PC=3'b001, inc_R=3'b010, inc_A=3'b011, 
 				inc_B=3'b100, inc_C=3'b101, inc_AC=3'b110, inc_AR=3'b111;
 				
+// ALU operation
 parameter ALU_inactive=3'b000, ALU_add=3'b010, ALU_mul=3'b001, ALU_sub=3'b011, 
 				ALU_div=3'b100;
 				
+// Assembly Code
 parameter NOP=4'b0000,  CLAC=4'b0001,  LDAC=4'b0010,  STAC=4'b0011, MVR=4'b0100,
 				 MVAC=4'b0101, MUL=4'b0110, ADD=4'b0111, SUB=4'b1000, DIV=4'b1001,
 				 JPNZ=4'b1010, INCAC=4'b1011, DECAC=4'b1100, END=4'b1111;
