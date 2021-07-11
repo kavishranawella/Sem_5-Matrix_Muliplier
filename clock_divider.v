@@ -2,17 +2,17 @@ module clock_divider (i_clk, o_clk);
 
 input i_clk;
 output reg o_clk = 1'b0;
-reg [1:0] count=2'd0;
+integer count=0;
 
 always @(posedge i_clk)
 begin
-	if (count == 2'd3)
+	if (count == 3)
 	begin
-		count <= 2'd0;
+		count <= 0;
 		o_clk <= ~o_clk;
 	end
 	else
-		count <= count + 2'd1;
+		count <= count + 1;
 end
 					
 endmodule

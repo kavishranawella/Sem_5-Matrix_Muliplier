@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Matrix_multiplier
-Sun Jul 11 16:14:11 2021
+Sun Jul 11 18:24:07 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -93,15 +93,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jul 11 16:14:11 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sun Jul 11 18:24:07 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Matrix_multiplier                           ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 4,163                                       ;
-;     Total combinational functions  ; 3,683                                       ;
-;     Dedicated logic registers      ; 1,317                                       ;
-; Total registers                    ; 1317                                        ;
+; Total logic elements               ; 4,210                                       ;
+;     Total combinational functions  ; 3,730                                       ;
+;     Dedicated logic registers      ; 1,347                                       ;
+; Total registers                    ; 1347                                        ;
 ; Total pins                         ; 6                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 6,144                                       ;
@@ -278,20 +278,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------------------------+
 ; Resource                                    ; Usage                       ;
 +---------------------------------------------+-----------------------------+
-; Estimated Total logic elements              ; 4,163                       ;
+; Estimated Total logic elements              ; 4,210                       ;
 ;                                             ;                             ;
-; Total combinational functions               ; 3683                        ;
+; Total combinational functions               ; 3730                        ;
 ; Logic element usage by number of LUT inputs ;                             ;
-;     -- 4 input functions                    ; 1765                        ;
-;     -- 3 input functions                    ; 1348                        ;
-;     -- <=2 input functions                  ; 570                         ;
+;     -- 4 input functions                    ; 1730                        ;
+;     -- 3 input functions                    ; 1399                        ;
+;     -- <=2 input functions                  ; 601                         ;
 ;                                             ;                             ;
 ; Logic elements by mode                      ;                             ;
-;     -- normal mode                          ; 2692                        ;
-;     -- arithmetic mode                      ; 991                         ;
+;     -- normal mode                          ; 2708                        ;
+;     -- arithmetic mode                      ; 1022                        ;
 ;                                             ;                             ;
-; Total registers                             ; 1317                        ;
-;     -- Dedicated logic registers            ; 1317                        ;
+; Total registers                             ; 1347                        ;
+;     -- Dedicated logic registers            ; 1347                        ;
 ;     -- I/O registers                        ; 0                           ;
 ;                                             ;                             ;
 ; I/O pins                                    ; 6                           ;
@@ -301,8 +301,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                             ;
 ; Maximum fan-out node                        ; clock_divider:clk_div|o_clk ;
 ; Maximum fan-out                             ; 1331                        ;
-; Total fan-out                               ; 16658                       ;
-; Average fan-out                             ; 3.31                        ;
+; Total fan-out                               ; 16793                       ;
+; Average fan-out                             ; 3.28                        ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -311,24 +311,24 @@ refer to the applicable agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                               ; Entity Name               ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
-; |top                                         ; 3683 (0)            ; 1317 (0)                  ; 6144        ; 8            ; 0       ; 4         ; 6    ; 0            ; |top                                                                                                                                              ; top                       ; work         ;
+; |top                                         ; 3730 (0)            ; 1347 (0)                  ; 6144        ; 8            ; 0       ; 4         ; 6    ; 0            ; |top                                                                                                                                              ; top                       ; work         ;
 ;    |IRAM_module:iram|                        ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|IRAM_module:iram                                                                                                                             ; IRAM_module               ; work         ;
 ;       |altsyncram:memory_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|IRAM_module:iram|altsyncram:memory_rtl_0                                                                                                     ; altsyncram                ; work         ;
 ;          |altsyncram_t791:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|IRAM_module:iram|altsyncram:memory_rtl_0|altsyncram_t791:auto_generated                                                                      ; altsyncram_t791           ; work         ;
-;    |clock_divider:clk_div|                   ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|clock_divider:clk_div                                                                                                                        ; clock_divider             ; work         ;
-;    |core:core1|                              ; 914 (0)             ; 328 (0)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core1                                                                                                                                   ; core                      ; work         ;
-;       |ALU:ALU_ins|                          ; 425 (129)           ; 34 (34)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core1|ALU:ALU_ins                                                                                                                       ; ALU                       ; work         ;
-;          |lpm_divide:Div0|                   ; 296 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|ALU:ALU_ins|lpm_divide:Div0                                                                                                       ; lpm_divide                ; work         ;
-;             |lpm_divide_lkm:auto_generated|  ; 296 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated                                                                         ; lpm_divide_lkm            ; work         ;
-;                |sign_div_unsign_dnh:divider| ; 296 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider                                             ; sign_div_unsign_dnh       ; work         ;
-;                   |alt_u_div_eaf:divider|    ; 296 (295)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider                       ; alt_u_div_eaf             ; work         ;
+;    |clock_divider:clk_div|                   ; 45 (45)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|clock_divider:clk_div                                                                                                                        ; clock_divider             ; work         ;
+;    |core:core1|                              ; 919 (0)             ; 328 (0)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core1                                                                                                                                   ; core                      ; work         ;
+;       |ALU:ALU_ins|                          ; 428 (129)           ; 34 (34)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core1|ALU:ALU_ins                                                                                                                       ; ALU                       ; work         ;
+;          |lpm_divide:Div0|                   ; 299 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|ALU:ALU_ins|lpm_divide:Div0                                                                                                       ; lpm_divide                ; work         ;
+;             |lpm_divide_lkm:auto_generated|  ; 299 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated                                                                         ; lpm_divide_lkm            ; work         ;
+;                |sign_div_unsign_dnh:divider| ; 299 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider                                             ; sign_div_unsign_dnh       ; work         ;
+;                   |alt_u_div_eaf:divider|    ; 299 (298)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider                       ; alt_u_div_eaf             ; work         ;
 ;                      |add_sub_8pc:add_sub_1| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_8pc:add_sub_1 ; add_sub_8pc               ; work         ;
 ;          |lpm_mult:Mult0|                    ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core1|ALU:ALU_ins|lpm_mult:Mult0                                                                                                        ; lpm_mult                  ; work         ;
 ;             |mult_7dt:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core1|ALU:ALU_ins|lpm_mult:Mult0|mult_7dt:auto_generated                                                                                ; mult_7dt                  ; work         ;
 ;       |control_unit:CU|                      ; 161 (161)           ; 101 (101)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|control_unit:CU                                                                                                                   ; control_unit              ; work         ;
 ;       |decoder_3to8:increase_sig|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|decoder_3to8:increase_sig                                                                                                         ; decoder_3to8              ; work         ;
 ;       |decoder_4to16:load_sig|               ; 15 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|decoder_4to16:load_sig                                                                                                            ; decoder_4to16             ; work         ;
-;       |mux_32:data_bus|                      ; 174 (174)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|mux_32:data_bus                                                                                                                   ; mux_32                    ; work         ;
+;       |mux_32:data_bus|                      ; 176 (176)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|mux_32:data_bus                                                                                                                   ; mux_32                    ; work         ;
 ;       |reg16:CDR|                            ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|reg16:CDR                                                                                                                         ; reg16                     ; work         ;
 ;       |reg16:CLA|                            ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|reg16:CLA                                                                                                                         ; reg16                     ; work         ;
 ;       |reg16:PR|                             ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|reg16:PR                                                                                                                          ; reg16                     ; work         ;
@@ -344,19 +344,19 @@ refer to the applicable agreement for further details.
 ;       |reg8:TR|                              ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|reg8:TR                                                                                                                           ; reg8                      ; work         ;
 ;       |regAC:AC|                             ; 50 (50)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|regAC:AC                                                                                                                          ; regAC                     ; work         ;
 ;       |regPC:PC|                             ; 9 (9)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core1|regPC:PC                                                                                                                          ; regPC                     ; work         ;
-;    |core:core2|                              ; 900 (0)             ; 314 (0)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core2                                                                                                                                   ; core                      ; work         ;
-;       |ALU:ALU_ins|                          ; 425 (129)           ; 34 (34)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core2|ALU:ALU_ins                                                                                                                       ; ALU                       ; work         ;
-;          |lpm_divide:Div0|                   ; 296 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|ALU:ALU_ins|lpm_divide:Div0                                                                                                       ; lpm_divide                ; work         ;
-;             |lpm_divide_lkm:auto_generated|  ; 296 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated                                                                         ; lpm_divide_lkm            ; work         ;
-;                |sign_div_unsign_dnh:divider| ; 296 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider                                             ; sign_div_unsign_dnh       ; work         ;
-;                   |alt_u_div_eaf:divider|    ; 296 (295)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider                       ; alt_u_div_eaf             ; work         ;
+;    |core:core2|                              ; 916 (0)             ; 314 (0)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core2                                                                                                                                   ; core                      ; work         ;
+;       |ALU:ALU_ins|                          ; 433 (129)           ; 34 (34)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core2|ALU:ALU_ins                                                                                                                       ; ALU                       ; work         ;
+;          |lpm_divide:Div0|                   ; 304 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|ALU:ALU_ins|lpm_divide:Div0                                                                                                       ; lpm_divide                ; work         ;
+;             |lpm_divide_lkm:auto_generated|  ; 304 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated                                                                         ; lpm_divide_lkm            ; work         ;
+;                |sign_div_unsign_dnh:divider| ; 304 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider                                             ; sign_div_unsign_dnh       ; work         ;
+;                   |alt_u_div_eaf:divider|    ; 304 (303)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider                       ; alt_u_div_eaf             ; work         ;
 ;                      |add_sub_8pc:add_sub_1| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_8pc:add_sub_1 ; add_sub_8pc               ; work         ;
 ;          |lpm_mult:Mult0|                    ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core2|ALU:ALU_ins|lpm_mult:Mult0                                                                                                        ; lpm_mult                  ; work         ;
 ;             |mult_7dt:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core2|ALU:ALU_ins|lpm_mult:Mult0|mult_7dt:auto_generated                                                                                ; mult_7dt                  ; work         ;
 ;       |control_unit:CU|                      ; 152 (152)           ; 95 (95)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|control_unit:CU                                                                                                                   ; control_unit              ; work         ;
 ;       |decoder_3to8:increase_sig|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|decoder_3to8:increase_sig                                                                                                         ; decoder_3to8              ; work         ;
 ;       |decoder_4to16:load_sig|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|decoder_4to16:load_sig                                                                                                            ; decoder_4to16             ; work         ;
-;       |mux_32:data_bus|                      ; 180 (180)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|mux_32:data_bus                                                                                                                   ; mux_32                    ; work         ;
+;       |mux_32:data_bus|                      ; 188 (188)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|mux_32:data_bus                                                                                                                   ; mux_32                    ; work         ;
 ;       |reg16:CDR|                            ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|reg16:CDR                                                                                                                         ; reg16                     ; work         ;
 ;       |reg16:CLA|                            ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|reg16:CLA                                                                                                                         ; reg16                     ; work         ;
 ;       |reg16:PR|                             ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|reg16:PR                                                                                                                          ; reg16                     ; work         ;
@@ -371,19 +371,19 @@ refer to the applicable agreement for further details.
 ;       |reg8:NOC|                             ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|reg8:NOC                                                                                                                          ; reg8                      ; work         ;
 ;       |reg8:TR|                              ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|reg8:TR                                                                                                                           ; reg8                      ; work         ;
 ;       |regAC:AC|                             ; 50 (50)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core2|regAC:AC                                                                                                                          ; regAC                     ; work         ;
-;    |core:core3|                              ; 915 (0)             ; 314 (0)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core3                                                                                                                                   ; core                      ; work         ;
-;       |ALU:ALU_ins|                          ; 431 (129)           ; 34 (34)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core3|ALU:ALU_ins                                                                                                                       ; ALU                       ; work         ;
-;          |lpm_divide:Div0|                   ; 302 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|ALU:ALU_ins|lpm_divide:Div0                                                                                                       ; lpm_divide                ; work         ;
-;             |lpm_divide_lkm:auto_generated|  ; 302 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated                                                                         ; lpm_divide_lkm            ; work         ;
-;                |sign_div_unsign_dnh:divider| ; 302 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider                                             ; sign_div_unsign_dnh       ; work         ;
-;                   |alt_u_div_eaf:divider|    ; 302 (301)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider                       ; alt_u_div_eaf             ; work         ;
+;    |core:core3|                              ; 903 (0)             ; 314 (0)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core3                                                                                                                                   ; core                      ; work         ;
+;       |ALU:ALU_ins|                          ; 426 (129)           ; 34 (34)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core3|ALU:ALU_ins                                                                                                                       ; ALU                       ; work         ;
+;          |lpm_divide:Div0|                   ; 297 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|ALU:ALU_ins|lpm_divide:Div0                                                                                                       ; lpm_divide                ; work         ;
+;             |lpm_divide_lkm:auto_generated|  ; 297 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated                                                                         ; lpm_divide_lkm            ; work         ;
+;                |sign_div_unsign_dnh:divider| ; 297 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider                                             ; sign_div_unsign_dnh       ; work         ;
+;                   |alt_u_div_eaf:divider|    ; 297 (296)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider                       ; alt_u_div_eaf             ; work         ;
 ;                      |add_sub_8pc:add_sub_1| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_8pc:add_sub_1 ; add_sub_8pc               ; work         ;
 ;          |lpm_mult:Mult0|                    ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core3|ALU:ALU_ins|lpm_mult:Mult0                                                                                                        ; lpm_mult                  ; work         ;
 ;             |mult_7dt:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core3|ALU:ALU_ins|lpm_mult:Mult0|mult_7dt:auto_generated                                                                                ; mult_7dt                  ; work         ;
 ;       |control_unit:CU|                      ; 154 (154)           ; 95 (95)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|control_unit:CU                                                                                                                   ; control_unit              ; work         ;
 ;       |decoder_3to8:increase_sig|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|decoder_3to8:increase_sig                                                                                                         ; decoder_3to8              ; work         ;
 ;       |decoder_4to16:load_sig|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|decoder_4to16:load_sig                                                                                                            ; decoder_4to16             ; work         ;
-;       |mux_32:data_bus|                      ; 187 (187)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|mux_32:data_bus                                                                                                                   ; mux_32                    ; work         ;
+;       |mux_32:data_bus|                      ; 180 (180)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|mux_32:data_bus                                                                                                                   ; mux_32                    ; work         ;
 ;       |reg16:CDR|                            ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|reg16:CDR                                                                                                                         ; reg16                     ; work         ;
 ;       |reg16:CLA|                            ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|reg16:CLA                                                                                                                         ; reg16                     ; work         ;
 ;       |reg16:PR|                             ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|reg16:PR                                                                                                                          ; reg16                     ; work         ;
@@ -398,19 +398,19 @@ refer to the applicable agreement for further details.
 ;       |reg8:NOC|                             ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|reg8:NOC                                                                                                                          ; reg8                      ; work         ;
 ;       |reg8:TR|                              ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|reg8:TR                                                                                                                           ; reg8                      ; work         ;
 ;       |regAC:AC|                             ; 50 (50)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core3|regAC:AC                                                                                                                          ; regAC                     ; work         ;
-;    |core:core4|                              ; 903 (0)             ; 314 (0)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core4                                                                                                                                   ; core                      ; work         ;
-;       |ALU:ALU_ins|                          ; 429 (131)           ; 34 (34)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core4|ALU:ALU_ins                                                                                                                       ; ALU                       ; work         ;
-;          |lpm_divide:Div0|                   ; 298 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core4|ALU:ALU_ins|lpm_divide:Div0                                                                                                       ; lpm_divide                ; work         ;
-;             |lpm_divide_lkm:auto_generated|  ; 298 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core4|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated                                                                         ; lpm_divide_lkm            ; work         ;
-;                |sign_div_unsign_dnh:divider| ; 298 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core4|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider                                             ; sign_div_unsign_dnh       ; work         ;
-;                   |alt_u_div_eaf:divider|    ; 298 (297)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core4|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider                       ; alt_u_div_eaf             ; work         ;
+;    |core:core4|                              ; 899 (0)             ; 314 (0)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core4                                                                                                                                   ; core                      ; work         ;
+;       |ALU:ALU_ins|                          ; 428 (131)           ; 34 (34)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core4|ALU:ALU_ins                                                                                                                       ; ALU                       ; work         ;
+;          |lpm_divide:Div0|                   ; 297 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core4|ALU:ALU_ins|lpm_divide:Div0                                                                                                       ; lpm_divide                ; work         ;
+;             |lpm_divide_lkm:auto_generated|  ; 297 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core4|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated                                                                         ; lpm_divide_lkm            ; work         ;
+;                |sign_div_unsign_dnh:divider| ; 297 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core4|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider                                             ; sign_div_unsign_dnh       ; work         ;
+;                   |alt_u_div_eaf:divider|    ; 297 (296)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core4|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider                       ; alt_u_div_eaf             ; work         ;
 ;                      |add_sub_8pc:add_sub_1| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core4|ALU:ALU_ins|lpm_divide:Div0|lpm_divide_lkm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_8pc:add_sub_1 ; add_sub_8pc               ; work         ;
 ;          |lpm_mult:Mult0|                    ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core4|ALU:ALU_ins|lpm_mult:Mult0                                                                                                        ; lpm_mult                  ; work         ;
 ;             |mult_7dt:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |top|core:core4|ALU:ALU_ins|lpm_mult:Mult0|mult_7dt:auto_generated                                                                                ; mult_7dt                  ; work         ;
 ;       |control_unit:CU|                      ; 152 (152)           ; 95 (95)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core4|control_unit:CU                                                                                                                   ; control_unit              ; work         ;
 ;       |decoder_3to8:increase_sig|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core4|decoder_3to8:increase_sig                                                                                                         ; decoder_3to8              ; work         ;
 ;       |decoder_4to16:load_sig|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core4|decoder_4to16:load_sig                                                                                                            ; decoder_4to16             ; work         ;
-;       |mux_32:data_bus|                      ; 179 (179)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core4|mux_32:data_bus                                                                                                                   ; mux_32                    ; work         ;
+;       |mux_32:data_bus|                      ; 176 (176)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core4|mux_32:data_bus                                                                                                                   ; mux_32                    ; work         ;
 ;       |reg16:CDR|                            ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core4|reg16:CDR                                                                                                                         ; reg16                     ; work         ;
 ;       |reg16:CLA|                            ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core4|reg16:CLA                                                                                                                         ; reg16                     ; work         ;
 ;       |reg16:PR|                             ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|core:core4|reg16:PR                                                                                                                          ; reg16                     ; work         ;
@@ -833,15 +833,7 @@ Encoding Type:  One-Hot
 +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 ; Register name                                                                  ; Reason for Removal                                                                     ;
 +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-; core:core4|regCID:CID|data_out[0,1]                                            ; Stuck at VCC due to stuck port data_in                                                 ;
-; core:core4|regCID:CID|data_out[2..7]                                           ; Stuck at GND due to stuck port data_in                                                 ;
-; core:core3|regCID:CID|data_out[0]                                              ; Stuck at GND due to stuck port data_in                                                 ;
-; core:core3|regCID:CID|data_out[1]                                              ; Stuck at VCC due to stuck port data_in                                                 ;
-; core:core3|regCID:CID|data_out[2..7]                                           ; Stuck at GND due to stuck port data_in                                                 ;
-; core:core2|regCID:CID|data_out[0]                                              ; Stuck at VCC due to stuck port data_in                                                 ;
-; core:core2|regCID:CID|data_out[1..7]                                           ; Stuck at GND due to stuck port data_in                                                 ;
 ; core:core1|control_unit:CU|iram_write                                          ; Stuck at GND due to stuck port data_in                                                 ;
-; core:core1|regCID:CID|data_out[0..7]                                           ; Stuck at GND due to stuck port data_in                                                 ;
 ; memory_control_unit:MCU|memory_control_unit_state:state|mux_data_in_sig[1]     ; Merged with memory_control_unit:MCU|memory_control_unit_state:state|mux_address_sig[1] ;
 ; memory_control_unit:MCU|memory_control_unit_state:state|mux_data_in_sig[0]     ; Merged with memory_control_unit:MCU|memory_control_unit_state:state|mux_address_sig[0] ;
 ; core:core4|control_unit:CU|state~2                                             ; Lost fanout                                                                            ;
@@ -881,7 +873,7 @@ Encoding Type:  One-Hot
 ; core:core2|reg16_inc:AR|data_out[9..15]                                        ; Lost fanout                                                                            ;
 ; core:core3|reg16_inc:AR|data_out[9..15]                                        ; Lost fanout                                                                            ;
 ; core:core4|reg16_inc:AR|data_out[9..15]                                        ; Lost fanout                                                                            ;
-; Total Number of Removed Registers = 96                                         ;                                                                                        ;
+; Total Number of Removed Registers = 64                                         ;                                                                                        ;
 +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 
@@ -890,7 +882,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1317  ;
+; Total registers                              ; 1347  ;
 ; Number of registers using Synchronous Clear  ; 24    ;
 ; Number of registers using Synchronous Load   ; 364   ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -923,83 +915,83 @@ Encoding Type:  One-Hot
 +--------------------------------------------------+-------------------------------------------------------+------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core4|reg16_inc:AR|data_out[4]        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core4|reg16_inc:C|data_out[9]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core4|reg16_inc:B|data_out[8]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core4|reg16_inc:A|data_out[3]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core4|reg16_inc:R|data_out[2]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core3|reg16_inc:AR|data_out[0]        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core3|reg16_inc:C|data_out[2]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core3|reg16_inc:B|data_out[13]        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core3|reg16_inc:A|data_out[9]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core3|reg16_inc:R|data_out[6]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core2|reg16_inc:AR|data_out[10]       ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core2|reg16_inc:C|data_out[3]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core2|reg16_inc:B|data_out[3]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core2|reg16_inc:A|data_out[6]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core2|reg16_inc:R|data_out[5]         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core1|reg16_inc:AR|data_out[1]        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core1|reg16_inc:C|data_out[15]        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core1|reg16_inc:B|data_out[15]        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core1|reg16_inc:A|data_out[15]        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core1|reg16_inc:R|data_out[6]         ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |top|core:core1|regPC:PC|data_out[6]            ;
-; 9:1                ; 16 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |top|core:core4|ALU:ALU_ins|out[4]              ;
-; 9:1                ; 16 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |top|core:core3|ALU:ALU_ins|out[12]             ;
-; 9:1                ; 16 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |top|core:core2|ALU:ALU_ins|out[6]              ;
-; 9:1                ; 16 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |top|core:core1|ALU:ALU_ins|out[0]              ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|core:core4|regAC:AC|data_out[7]            ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|core:core3|regAC:AC|data_out[9]            ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|core:core2|regAC:AC|data_out[1]            ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|core:core1|regAC:AC|data_out[9]            ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|core:core4|control_unit:CU|state           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core4|control_unit:CU|state           ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |top|core:core4|control_unit:CU|state           ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |top|core:core4|control_unit:CU|state           ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|core:core4|control_unit:CU|state           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core4|control_unit:CU|state           ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|core:core3|control_unit:CU|state           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core3|control_unit:CU|state           ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |top|core:core3|control_unit:CU|state           ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |top|core:core3|control_unit:CU|state           ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|core:core3|control_unit:CU|state           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core3|control_unit:CU|state           ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|core:core2|control_unit:CU|state           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core2|control_unit:CU|state           ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |top|core:core2|control_unit:CU|state           ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |top|core:core2|control_unit:CU|state           ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|core:core2|control_unit:CU|state           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core2|control_unit:CU|state           ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|core:core1|control_unit:CU|state           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core1|control_unit:CU|state           ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |top|core:core1|control_unit:CU|state           ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |top|core:core1|control_unit:CU|state           ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|core:core1|control_unit:CU|state           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core1|control_unit:CU|state           ;
-; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |top|memory_control_unit:MCU|mux_8:data_in|Mux5 ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core4|control_unit:CU|state           ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core4|control_unit:CU|state           ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core3|control_unit:CU|state           ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core3|control_unit:CU|state           ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core2|control_unit:CU|state           ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core2|control_unit:CU|state           ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core1|control_unit:CU|state           ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core1|control_unit:CU|state           ;
-; 23:1               ; 8 bits    ; 120 LEs       ; 72 LEs               ; 48 LEs                 ; No         ; |top|core:core4|mux_32:data_bus|Mux7            ;
-; 23:1               ; 8 bits    ; 120 LEs       ; 72 LEs               ; 48 LEs                 ; No         ; |top|core:core3|mux_32:data_bus|Mux5            ;
-; 23:1               ; 8 bits    ; 120 LEs       ; 72 LEs               ; 48 LEs                 ; No         ; |top|core:core2|mux_32:data_bus|Mux7            ;
-; 23:1               ; 8 bits    ; 120 LEs       ; 72 LEs               ; 48 LEs                 ; No         ; |top|core:core1|mux_32:data_bus|Mux6            ;
-; 24:1               ; 6 bits    ; 96 LEs        ; 60 LEs               ; 36 LEs                 ; No         ; |top|core:core4|mux_32:data_bus|Mux9            ;
-; 24:1               ; 7 bits    ; 112 LEs       ; 70 LEs               ; 42 LEs                 ; No         ; |top|core:core3|mux_32:data_bus|Mux15           ;
-; 24:1               ; 7 bits    ; 112 LEs       ; 70 LEs               ; 42 LEs                 ; No         ; |top|core:core2|mux_32:data_bus|Mux12           ;
-; 24:1               ; 8 bits    ; 128 LEs       ; 80 LEs               ; 48 LEs                 ; No         ; |top|core:core1|mux_32:data_bus|Mux15           ;
-; 17:1               ; 2 bits    ; 22 LEs        ; 20 LEs               ; 2 LEs                  ; No         ; |top|core:core4|mux_32:data_bus|Mux15           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core4|reg16_inc:AR|data_out[10]                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core4|reg16_inc:C|data_out[5]                       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core4|reg16_inc:B|data_out[12]                      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core4|reg16_inc:A|data_out[12]                      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core4|reg16_inc:R|data_out[10]                      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core3|reg16_inc:AR|data_out[7]                      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core3|reg16_inc:C|data_out[3]                       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core3|reg16_inc:B|data_out[5]                       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core3|reg16_inc:A|data_out[6]                       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core3|reg16_inc:R|data_out[2]                       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core2|reg16_inc:AR|data_out[1]                      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core2|reg16_inc:C|data_out[4]                       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core2|reg16_inc:B|data_out[0]                       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core2|reg16_inc:A|data_out[9]                       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core2|reg16_inc:R|data_out[6]                       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core1|reg16_inc:AR|data_out[4]                      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core1|reg16_inc:C|data_out[3]                       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core1|reg16_inc:B|data_out[0]                       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core1|reg16_inc:A|data_out[7]                       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|core:core1|reg16_inc:R|data_out[14]                      ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |top|core:core1|regPC:PC|data_out[3]                          ;
+; 9:1                ; 16 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |top|core:core4|ALU:ALU_ins|out[11]                           ;
+; 9:1                ; 16 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |top|core:core3|ALU:ALU_ins|out[9]                            ;
+; 9:1                ; 16 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |top|core:core2|ALU:ALU_ins|out[3]                            ;
+; 9:1                ; 16 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |top|core:core1|ALU:ALU_ins|out[15]                           ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|core:core4|regAC:AC|data_out[15]                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|core:core3|regAC:AC|data_out[4]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|core:core2|regAC:AC|data_out[2]                          ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|core:core1|regAC:AC|data_out[11]                         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|core:core4|control_unit:CU|state                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core4|control_unit:CU|state                         ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |top|core:core4|control_unit:CU|state                         ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |top|core:core4|control_unit:CU|state                         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|core:core4|control_unit:CU|state                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core4|control_unit:CU|state                         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|core:core3|control_unit:CU|state                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core3|control_unit:CU|state                         ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |top|core:core3|control_unit:CU|state                         ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |top|core:core3|control_unit:CU|state                         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|core:core3|control_unit:CU|state                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core3|control_unit:CU|state                         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|core:core2|control_unit:CU|state                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core2|control_unit:CU|state                         ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |top|core:core2|control_unit:CU|state                         ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |top|core:core2|control_unit:CU|state                         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|core:core2|control_unit:CU|state                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core2|control_unit:CU|state                         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|core:core1|control_unit:CU|state                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core1|control_unit:CU|state                         ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |top|core:core1|control_unit:CU|state                         ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |top|core:core1|control_unit:CU|state                         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|core:core1|control_unit:CU|state                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core1|control_unit:CU|state                         ;
+; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |top|memory_control_unit:MCU|mux_16_4inputs:data_address|Mux7 ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core4|control_unit:CU|state                         ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core4|control_unit:CU|state                         ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core3|control_unit:CU|state                         ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core3|control_unit:CU|state                         ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core2|control_unit:CU|state                         ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core2|control_unit:CU|state                         ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core1|control_unit:CU|state                         ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|core:core1|control_unit:CU|state                         ;
+; 23:1               ; 8 bits    ; 120 LEs       ; 72 LEs               ; 48 LEs                 ; No         ; |top|core:core4|mux_32:data_bus|Mux7                          ;
+; 23:1               ; 8 bits    ; 120 LEs       ; 72 LEs               ; 48 LEs                 ; No         ; |top|core:core3|mux_32:data_bus|Mux5                          ;
+; 23:1               ; 8 bits    ; 120 LEs       ; 72 LEs               ; 48 LEs                 ; No         ; |top|core:core2|mux_32:data_bus|Mux4                          ;
+; 23:1               ; 8 bits    ; 120 LEs       ; 72 LEs               ; 48 LEs                 ; No         ; |top|core:core1|mux_32:data_bus|Mux7                          ;
+; 24:1               ; 6 bits    ; 96 LEs        ; 60 LEs               ; 36 LEs                 ; No         ; |top|core:core4|mux_32:data_bus|Mux11                         ;
+; 24:1               ; 7 bits    ; 112 LEs       ; 70 LEs               ; 42 LEs                 ; No         ; |top|core:core3|mux_32:data_bus|Mux12                         ;
+; 24:1               ; 7 bits    ; 112 LEs       ; 70 LEs               ; 42 LEs                 ; No         ; |top|core:core2|mux_32:data_bus|Mux14                         ;
+; 24:1               ; 8 bits    ; 128 LEs       ; 80 LEs               ; 48 LEs                 ; No         ; |top|core:core1|mux_32:data_bus|Mux13                         ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 20 LEs               ; 2 LEs                  ; No         ; |top|core:core4|mux_32:data_bus|Mux15                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------+
@@ -1048,11 +1040,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +--------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: core:core1|regCID:CID ;
-+----------------+----------+----------------------------------------+
-; Parameter Name ; Value    ; Type                                   ;
-+----------------+----------+----------------------------------------+
-; core_id        ; 00000000 ; Unsigned Binary                        ;
-+----------------+----------+----------------------------------------+
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; core_id        ; 0     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1253,11 +1245,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +--------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: core:core2|regCID:CID ;
-+----------------+----------+----------------------------------------+
-; Parameter Name ; Value    ; Type                                   ;
-+----------------+----------+----------------------------------------+
-; core_id        ; 00000001 ; Unsigned Binary                        ;
-+----------------+----------+----------------------------------------+
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; core_id        ; 1     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1458,11 +1450,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +--------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: core:core3|regCID:CID ;
-+----------------+----------+----------------------------------------+
-; Parameter Name ; Value    ; Type                                   ;
-+----------------+----------+----------------------------------------+
-; core_id        ; 00000010 ; Unsigned Binary                        ;
-+----------------+----------+----------------------------------------+
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; core_id        ; 2     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1663,11 +1655,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +--------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: core:core4|regCID:CID ;
-+----------------+----------+----------------------------------------+
-; Parameter Name ; Value    ; Type                                   ;
-+----------------+----------+----------------------------------------+
-; core_id        ; 00000011 ; Unsigned Binary                        ;
-+----------------+----------+----------------------------------------+
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; core_id        ; 3     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -2390,28 +2382,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 6                           ;
-; cycloneiii_ff         ; 1317                        ;
+; cycloneiii_ff         ; 1347                        ;
 ;     ENA               ; 480                         ;
 ;     ENA SCLR SLD      ; 8                           ;
 ;     ENA SLD           ; 356                         ;
 ;     SCLR              ; 16                          ;
-;     plain             ; 457                         ;
-; cycloneiii_lcell_comb ; 3683                        ;
-;     arith             ; 991                         ;
-;         2 data inputs ; 283                         ;
+;     plain             ; 487                         ;
+; cycloneiii_lcell_comb ; 3730                        ;
+;     arith             ; 1022                        ;
+;         2 data inputs ; 314                         ;
 ;         3 data inputs ; 708                         ;
-;     normal            ; 2692                        ;
+;     normal            ; 2708                        ;
 ;         0 data inputs ; 56                          ;
 ;         1 data inputs ; 30                          ;
 ;         2 data inputs ; 201                         ;
-;         3 data inputs ; 640                         ;
-;         4 data inputs ; 1765                        ;
+;         3 data inputs ; 691                         ;
+;         4 data inputs ; 1730                        ;
 ; cycloneiii_mac_mult   ; 4                           ;
 ; cycloneiii_mac_out    ; 4                           ;
 ; cycloneiii_ram_block  ; 16                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 61.90                       ;
-; Average LUT depth     ; 30.22                       ;
+; Max LUT depth         ; 61.20                       ;
+; Average LUT depth     ; 29.92                       ;
 +-----------------------+-----------------------------+
 
 
@@ -2420,7 +2412,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:13     ;
+; Top            ; 00:00:09     ;
 +----------------+--------------+
 
 
@@ -2430,7 +2422,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Jul 11 16:13:35 2021
+    Info: Processing started: Sun Jul 11 18:23:36 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Matrix_multiplier -c Matrix_multiplier
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file dram_module.v
@@ -2512,6 +2504,7 @@ Info (12128): Elaborating entity "regPC" for hierarchy "core:core1|regPC:PC" Fil
 Info (12128): Elaborating entity "reg16_inc" for hierarchy "core:core1|reg16_inc:AR" File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v Line: 83
 Info (12128): Elaborating entity "reg16" for hierarchy "core:core1|reg16:PR" File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v Line: 85
 Info (12128): Elaborating entity "regCID" for hierarchy "core:core1|regCID:CID" File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v Line: 96
+Warning (10230): Verilog HDL assignment warning at regCID.v(9): truncated value with size 32 to match size of target (8) File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/regCID.v Line: 9
 Info (12128): Elaborating entity "regAC" for hierarchy "core:core1|regAC:AC" File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v Line: 99
 Info (12128): Elaborating entity "mux_32" for hierarchy "core:core1|mux_32:data_bus" File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v Line: 110
 Info (12128): Elaborating entity "decoder_4to16" for hierarchy "core:core1|decoder_4to16:load_sig" File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v Line: 114
@@ -2520,10 +2513,13 @@ Info (12128): Elaborating entity "ALU" for hierarchy "core:core1|ALU:ALU_ins" Fi
 Info (12128): Elaborating entity "control_unit" for hierarchy "core:core1|control_unit:CU" File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v Line: 124
 Info (12128): Elaborating entity "core" for hierarchy "core:core2" File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/top.v Line: 64
 Info (12128): Elaborating entity "regCID" for hierarchy "core:core2|regCID:CID" File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v Line: 96
+Warning (10230): Verilog HDL assignment warning at regCID.v(9): truncated value with size 32 to match size of target (8) File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/regCID.v Line: 9
 Info (12128): Elaborating entity "core" for hierarchy "core:core3" File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/top.v Line: 72
 Info (12128): Elaborating entity "regCID" for hierarchy "core:core3|regCID:CID" File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v Line: 96
+Warning (10230): Verilog HDL assignment warning at regCID.v(9): truncated value with size 32 to match size of target (8) File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/regCID.v Line: 9
 Info (12128): Elaborating entity "core" for hierarchy "core:core4" File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/top.v Line: 80
 Info (12128): Elaborating entity "regCID" for hierarchy "core:core4|regCID:CID" File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v Line: 96
+Warning (10230): Verilog HDL assignment warning at regCID.v(9): truncated value with size 32 to match size of target (8) File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/regCID.v Line: 9
 Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:clk_div" File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/top.v Line: 83
 Warning (276027): Inferred dual-clock RAM node "memory_control_unit:MCU|DRAM_module:dram|memory_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Info (19000): Inferred 2 megafunctions from design logic
@@ -2631,17 +2627,17 @@ Info (17049): 61 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/output_files/Matrix_multiplier.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 4261 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4308 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 4 output pins
-    Info (21061): Implemented 4231 logic cells
+    Info (21061): Implemented 4278 logic cells
     Info (21064): Implemented 16 RAM segments
     Info (21062): Implemented 8 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4821 megabytes
-    Info: Processing ended: Sun Jul 11 16:14:11 2021
-    Info: Elapsed time: 00:00:36
-    Info: Total CPU time (on all processors): 00:00:58
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4812 megabytes
+    Info: Processing ended: Sun Jul 11 18:24:07 2021
+    Info: Elapsed time: 00:00:31
+    Info: Total CPU time (on all processors): 00:00:53
 
 
 +------------------------------------------+
