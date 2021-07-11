@@ -69,7 +69,7 @@ wire [3:0] load_decode_sig;
 wire [2:0] inc_decode_sig;
 
 
-reg8_inc  PC (.clk(neg_clk), .rst(rst_PC), .load(load_PC), .inc(inc_PC), .data_in(mux_out[7:0]), .data_out(o_iram_addr));
+regPC  PC (.clk(neg_clk), .rst(rst_PC), .load(load_PC), .inc(inc_PC), .data_in(mux_out[7:0]), .data_out(o_iram_addr));
 reg8      IR (.clk(neg_clk), .load(load_IR), .data_in(mux_out[7:0]), .data_out(instruction)); 
 reg16_inc AR (.clk(neg_clk), .load(load_AR), .inc(inc_AR), .data_in(mux_out), .data_out(o_dram_addr));
 reg8      DR (.clk(neg_clk), .load(load_DR), .data_in(mux_out[7:0]), .data_out(mux_in_DR));

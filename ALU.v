@@ -17,7 +17,7 @@ parameter NO_OPERATION=2'b00, MUL=2'b01, ADD=2'b10, SUB=2'b11;
 always @(posedge clk)
 begin
 
-	case(alu_control[1:0])
+	case(alu_control)
 		NO_OPERATION : 
 		begin
 			out <= out;

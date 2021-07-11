@@ -56,29 +56,11 @@ parameter FETCH1=6'd0,  FETCH2=6'd1, FETCH3=6'd2, FETCH4=6'd3, NOP1=6'd4,
 			 MVAC_CDR1=6'd35, MVAC_SR1=6'd36, MVAC_PR1=6'd37, MVAC_R1=6'd38, MUL1=6'd39,
 			 ADD_SR1=6'd40, ADD_SR_IR1=6'd41, SUB_R1=6'd42, SUB_CDR1=6'd43, JPNZY1=6'd44,
 			 JPNZY2=6'd45, JPNZY3=6'd46, JPNZN1=6'd47, INCAC1=6'd48, END1=6'd49,
-			 LDAC8=6'd50, LDAC9=6'd51, STAC7=6'd52, ADD_CDR1=6'd53, START1=6'd54,
-			 DUMMY1=6'd55, DUMMY2=6'd56, DUMMY3=6'd57, DUMMY4=6'd58, DUMMY5=6'd59, DUMMY6=6'd60,
-			 DUMMY7=6'd61, DUMMY8=6'd62, DUMMY9=6'd63;
+			 LDAC8=6'd50, LDAC9=6'd51, STAC7=6'd52, ADD_CDR1=6'd53;
 				
 always @(posedge clk)
 begin
 	case (state)
-		
-		START1:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_inactive;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b1;
-			clear_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
-			state <= FETCH1;
-		end
 		
 		FETCH1:
 		begin
@@ -942,7 +924,7 @@ begin
 			mux_sig <= sel_SR;
 			load_decode_sig <= load_off;
 			alu_sig <= ALU_add;
-			inc_decode_sig <= inc_off;
+			inc_decode_sig <= inc_R;
 			busy_sig <= 1'b1;
 			rst_PC <= 1'b0;
 			clear_ac <= 1'b0;
@@ -1078,8 +1060,16 @@ begin
 			iram_write <= 1'b0;
 			dram_read <= 1'b0;
 			dram_write <= 1'b0;
-			if (start_sig)	state <= END1;
-			else state <= START1;
+			if (start_sig)	
+			begin
+				rst_PC <= 1'b0;
+				state <= END1;
+			end
+			else 
+			begin
+				rst_PC <= 1'b1;
+				state <= FETCH1;
+			end
 		end
 		
 		default:

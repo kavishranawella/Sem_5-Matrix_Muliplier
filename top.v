@@ -6,9 +6,7 @@ output o_busy;
 wire [7:0] iram_addr_1, iram_data_in_1, iram_data_out_1, dram_data_in_1, dram_data_out_1;
 wire [15:0] dram_addr_1;
 wire iram_write_1, iram_read_1, dram_write_1, dram_read_1;
-
-reg clk = 1'b0;
-reg [1:0] count=2'd0;
+wire clk;
 
 DRAM dram(.address(dram_addr_1), .clock(clk), .data(dram_data_in_1), 
 				.rden(dram_read_1), .wren(dram_write_1), .q(dram_data_out_1));
@@ -23,15 +21,6 @@ core core1 (.i_clk(clk), .i_start(i_start), .i_dram_in(dram_data_out_1),
 				.o_iram_read(iram_read_1), .o_iram_write(iram_write_1), 
 				.o_iram_out(iram_data_in_1), .o_busy(o_busy));
 				
-always @(posedge i_clk)
-begin
-	if (count == 2'd3)
-	begin
-		count <= 2'd0;
-		clk<= ~clk;
-	end
-	else
-		count <= count + 2'd1;
-end
-					
+clock_divider clk_div(.i_clk(i_clk), .clk(clk));
+			
 endmodule
