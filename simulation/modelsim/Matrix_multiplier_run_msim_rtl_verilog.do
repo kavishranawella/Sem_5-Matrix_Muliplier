@@ -5,11 +5,11 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
+vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/clock_divider.v}
 vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/ALU.v}
 vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/mux_16.v}
 vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/decoder_4to16.v}
 vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/reg16.v}
-vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/reg8_inc.v}
 vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/reg16_inc.v}
 vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/reg8.v}
 vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/core.v}
@@ -19,6 +19,7 @@ vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilo
 vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/top.v}
 vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/IRAM.v}
 vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/DRAM.v}
+vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/regPC.v}
 
 vlog -vlog01compat -work work +incdir+D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier {D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/tb_top.v}
 
