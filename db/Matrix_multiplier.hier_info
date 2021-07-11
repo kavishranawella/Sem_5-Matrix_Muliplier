@@ -1,10 +1,10 @@
 |top
 i_clk => i_clk.IN1
 i_start => i_start.IN4
-o_busy_1 << core:core1.o_busy
-o_busy_2 << core:core2.o_busy
-o_busy_3 << core:core3.o_busy
-o_busy_4 << core:core4.o_busy
+o_busy_1 <= core:core1.o_busy
+o_busy_2 <= core:core2.o_busy
+o_busy_3 <= core:core3.o_busy
+o_busy_4 <= core:core4.o_busy
 
 
 |top|memory_control_unit:MCU
@@ -5348,22 +5348,15 @@ data_out[7] <= data_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|core:core1|regCID:CID
-clk => data_out[0]~reg0.CLK
-clk => data_out[1]~reg0.CLK
-clk => data_out[2]~reg0.CLK
-clk => data_out[3]~reg0.CLK
-clk => data_out[4]~reg0.CLK
-clk => data_out[5]~reg0.CLK
-clk => data_out[6]~reg0.CLK
-clk => data_out[7]~reg0.CLK
-data_out[0] <= data_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[1] <= data_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[2] <= data_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[3] <= data_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[4] <= data_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[5] <= data_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[6] <= data_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[7] <= data_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => ~NO_FANOUT~
+data_out[0] <= <GND>
+data_out[1] <= <GND>
+data_out[2] <= <GND>
+data_out[3] <= <GND>
+data_out[4] <= <GND>
+data_out[5] <= <GND>
+data_out[6] <= <GND>
+data_out[7] <= <GND>
 
 
 |top|core:core1|regAC:AC
@@ -7494,22 +7487,15 @@ data_out[7] <= data_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|core:core2|regCID:CID
-clk => data_out[0]~reg0.CLK
-clk => data_out[1]~reg0.CLK
-clk => data_out[2]~reg0.CLK
-clk => data_out[3]~reg0.CLK
-clk => data_out[4]~reg0.CLK
-clk => data_out[5]~reg0.CLK
-clk => data_out[6]~reg0.CLK
-clk => data_out[7]~reg0.CLK
-data_out[0] <= data_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[1] <= data_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[2] <= data_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[3] <= data_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[4] <= data_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[5] <= data_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[6] <= data_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[7] <= data_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => ~NO_FANOUT~
+data_out[0] <= <VCC>
+data_out[1] <= <GND>
+data_out[2] <= <GND>
+data_out[3] <= <GND>
+data_out[4] <= <GND>
+data_out[5] <= <GND>
+data_out[6] <= <GND>
+data_out[7] <= <GND>
 
 
 |top|core:core2|regAC:AC
@@ -9640,22 +9626,15 @@ data_out[7] <= data_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|core:core3|regCID:CID
-clk => data_out[0]~reg0.CLK
-clk => data_out[1]~reg0.CLK
-clk => data_out[2]~reg0.CLK
-clk => data_out[3]~reg0.CLK
-clk => data_out[4]~reg0.CLK
-clk => data_out[5]~reg0.CLK
-clk => data_out[6]~reg0.CLK
-clk => data_out[7]~reg0.CLK
-data_out[0] <= data_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[1] <= data_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[2] <= data_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[3] <= data_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[4] <= data_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[5] <= data_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[6] <= data_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[7] <= data_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => ~NO_FANOUT~
+data_out[0] <= <GND>
+data_out[1] <= <VCC>
+data_out[2] <= <GND>
+data_out[3] <= <GND>
+data_out[4] <= <GND>
+data_out[5] <= <GND>
+data_out[6] <= <GND>
+data_out[7] <= <GND>
 
 
 |top|core:core3|regAC:AC
@@ -11786,22 +11765,15 @@ data_out[7] <= data_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|core:core4|regCID:CID
-clk => data_out[0]~reg0.CLK
-clk => data_out[1]~reg0.CLK
-clk => data_out[2]~reg0.CLK
-clk => data_out[3]~reg0.CLK
-clk => data_out[4]~reg0.CLK
-clk => data_out[5]~reg0.CLK
-clk => data_out[6]~reg0.CLK
-clk => data_out[7]~reg0.CLK
-data_out[0] <= data_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[1] <= data_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[2] <= data_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[3] <= data_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[4] <= data_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[5] <= data_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[6] <= data_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data_out[7] <= data_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => ~NO_FANOUT~
+data_out[0] <= <VCC>
+data_out[1] <= <VCC>
+data_out[2] <= <GND>
+data_out[3] <= <GND>
+data_out[4] <= <GND>
+data_out[5] <= <GND>
+data_out[6] <= <GND>
+data_out[7] <= <GND>
 
 
 |top|core:core4|regAC:AC
@@ -12986,10 +12958,40 @@ noc[2] => Equal8.IN1
 noc[2] => Equal9.IN2
 
 
-|top|clock_divider:clock_divide_ins
+|top|clock_divider:clk_div
 i_clk => o_clk~reg0.CLK
 i_clk => count[0].CLK
 i_clk => count[1].CLK
+i_clk => count[2].CLK
+i_clk => count[3].CLK
+i_clk => count[4].CLK
+i_clk => count[5].CLK
+i_clk => count[6].CLK
+i_clk => count[7].CLK
+i_clk => count[8].CLK
+i_clk => count[9].CLK
+i_clk => count[10].CLK
+i_clk => count[11].CLK
+i_clk => count[12].CLK
+i_clk => count[13].CLK
+i_clk => count[14].CLK
+i_clk => count[15].CLK
+i_clk => count[16].CLK
+i_clk => count[17].CLK
+i_clk => count[18].CLK
+i_clk => count[19].CLK
+i_clk => count[20].CLK
+i_clk => count[21].CLK
+i_clk => count[22].CLK
+i_clk => count[23].CLK
+i_clk => count[24].CLK
+i_clk => count[25].CLK
+i_clk => count[26].CLK
+i_clk => count[27].CLK
+i_clk => count[28].CLK
+i_clk => count[29].CLK
+i_clk => count[30].CLK
+i_clk => count[31].CLK
 o_clk <= o_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

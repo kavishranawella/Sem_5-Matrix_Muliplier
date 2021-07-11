@@ -72,6 +72,6 @@ core #(.core_id(3)) core4 (.i_clk(clk), .i_start(i_start), .i_dram_in(dram_data_
 				.o_iram_read(iram_read_4), .o_iram_write(iram_write_4), 
 				.o_iram_out(iram_data_in_4), .o_busy(o_busy_4), .o_noc(noc_4));  
 				
-clock_divider clock_divide_ins (.i_clk(i_clk), .o_clk(clk)); 
+clock_divider clk_div (.i_clk(i_clk), .o_clk(clk)); 
 					
 endmodule

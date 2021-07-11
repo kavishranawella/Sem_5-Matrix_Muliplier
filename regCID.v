@@ -1,9 +1,9 @@
-module regCID #(parameter [7:0] core_id = 0) (clk, data_out); 
+module regCID #(parameter core_id = 0) (clk, data_out); 
 
 	input clk;
 	output reg [7:0] data_out;
 	
-	always @(posedge clk)
+	initial
 	begin
 	
 		data_out <= core_id;

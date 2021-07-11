@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Wed Jul 07 21:12:31 2021
+Analysis & Synthesis Status : Successful - Sun Jul 11 18:10:25 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : Matrix_multiplier
 Top-level Entity Name : top
 Family : Cyclone IV E
-Total logic elements : 4,641
-    Total combinational functions : 4,132
-    Dedicated logic registers : 1,549
-Total registers : 1549
+Total logic elements : 4,676
+    Total combinational functions : 4,167
+    Dedicated logic registers : 1,579
+Total registers : 1579
 Total pins : 6
 Total virtual pins : 0
 Total memory bits : 526,336
