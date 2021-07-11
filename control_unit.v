@@ -20,7 +20,7 @@ output reg iram_write;
 output reg [1:0] dram_read;
 output reg [1:0] dram_write;
 
-reg [6:0] state = 7'd49;
+reg [6:0] state = 7'd76;
 
 parameter read_off=2'b00, read_same=2'b01, read_different=2'b11;
 parameter write_off=2'b00, write_same=2'b01, write_different=2'b11;
