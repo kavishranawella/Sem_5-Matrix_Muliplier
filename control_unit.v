@@ -8,7 +8,7 @@ input zflag;
 input start_sig;
 output reg [3:0] mux_sig;
 output reg [3:0] load_decode_sig;
-output reg [2:0] alu_sig;
+output reg [1:0] alu_sig;
 output reg [2:0] inc_decode_sig;
 output reg busy_sig;
 output reg rst_PC;
@@ -33,7 +33,7 @@ parameter sel_DR=4'b0000, sel_PR=4'b0001, sel_SR=4'b0010, sel_CDR=4'b0011,
 parameter inc_off=3'b000, inc_PC=3'b001, inc_R=3'b010, inc_A=3'b011, 
 				inc_B=3'b100, inc_C=3'b101, inc_AC=3'b110, inc_AR=3'b111;
 				
-parameter ALU_inactive=3'b000, ALU_add=3'b010, ALU_mul=3'b001, ALU_sub=3'b011, ALU_AC_load=3'b100;
+parameter ALU_inactive=2'b00, ALU_add=2'b10, ALU_mul=2'b01, ALU_sub=2'b11;
 				
 parameter NOP=4'b0000,  CLAC=4'b0001,  LDAC=4'b0010,  STAC=4'b0011, MVR=4'b0100,
 				 MVAC=4'b0101, MUL=4'b0110, ADD=4'b0111, SUB=4'b1000, JPNZ=4'b1001,
@@ -191,8 +191,6 @@ begin
 						
 						A : state <= MVR_A1;
 						
-						R : state <= DUMMY8;
-						
 						default : state <= END1;
 						
 					endcase
@@ -236,8 +234,6 @@ begin
 						SR : state <= ADD_SR1;
 						
 						SR_IR : state <= ADD_SR_IR1;
-						
-						R : state <= DUMMY7;
 						
 						default : state <= END1;
 						
@@ -893,75 +889,11 @@ begin
 			state <= FETCH1;
 		end
 		
-		DUMMY7:
-		begin
-			mux_sig <= sel_R;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_add;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
-			state <= DUMMY9;
-		end
-		
-		DUMMY9:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_AC_load;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
-			state <= FETCH1;
-		end
-		
-		DUMMY8:
-		begin
-			mux_sig <= sel_R;
-			load_decode_sig <= load_AC;
-			alu_sig <= ALU_inactive;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
-			state <= FETCH1;
-		end
-		
 		MUL1:
 		begin
 			mux_sig <= sel_PR;
 			load_decode_sig <= load_off;
 			alu_sig <= ALU_mul;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
-			state <= DUMMY1;
-		end
-		
-		DUMMY1:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_AC_load;
 			inc_decode_sig <= inc_off;
 			busy_sig <= 1'b1;
 			rst_PC <= 1'b0;
@@ -986,22 +918,6 @@ begin
 			iram_write <= 1'b0;
 			dram_read <= 1'b0;
 			dram_write <= 1'b0;
-			state <= DUMMY2;
-		end
-		
-		DUMMY2:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_AC_load;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
 			state <= FETCH1;
 		end
 		
@@ -1010,22 +926,6 @@ begin
 			mux_sig <= sel_SR;
 			load_decode_sig <= load_off;
 			alu_sig <= ALU_add;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
-			state <= DUMMY3;
-		end
-		
-		DUMMY3:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_AC_load;
 			inc_decode_sig <= inc_off;
 			busy_sig <= 1'b1;
 			rst_PC <= 1'b0;
@@ -1050,22 +950,6 @@ begin
 			iram_write <= 1'b0;
 			dram_read <= 1'b0;
 			dram_write <= 1'b0;
-			state <= DUMMY4;
-		end
-		
-		DUMMY4:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_AC_load;
-			inc_decode_sig <= inc_R;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
 			state <= FETCH1;
 		end
 		
@@ -1082,22 +966,6 @@ begin
 			iram_write <= 1'b0;
 			dram_read <= 1'b0;
 			dram_write <= 1'b0;
-			state <= DUMMY5;
-		end
-		
-		DUMMY5:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_AC_load;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
 			state <= FETCH1;
 		end
 		
@@ -1106,22 +974,6 @@ begin
 			mux_sig <= sel_CDR;
 			load_decode_sig <= load_off;
 			alu_sig <= ALU_sub;
-			inc_decode_sig <= inc_off;
-			busy_sig <= 1'b1;
-			rst_PC <= 1'b0;
-			clear_ac <= 1'b0;
-			iram_read <= 1'b0;
-			iram_write <= 1'b0;
-			dram_read <= 1'b0;
-			dram_write <= 1'b0;
-			state <= DUMMY6; 
-		end
-		
-		DUMMY6:
-		begin
-			mux_sig <= sel_none;
-			load_decode_sig <= load_off;
-			alu_sig <= ALU_AC_load;
 			inc_decode_sig <= inc_off;
 			busy_sig <= 1'b1;
 			rst_PC <= 1'b0;
