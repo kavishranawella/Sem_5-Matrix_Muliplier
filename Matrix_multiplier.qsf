@@ -62,6 +62,14 @@ set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_test
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_test -section_id tb_test
 set_global_assignment -name EDA_TEST_BENCH_FILE tb_top.v -section_id tb_top
 set_global_assignment -name EDA_TEST_BENCH_FILE tb_test.v -section_id tb_test
+set_location_assignment PIN_E22 -to o_busy_2
+set_location_assignment PIN_E25 -to o_busy_3
+set_location_assignment PIN_E24 -to o_busy_4
+set_location_assignment PIN_E21 -to o_busy_1
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name HEX_FILE data_test_4.hex
 set_global_assignment -name VERILOG_FILE memory_control_unit.v
 set_global_assignment -name VERILOG_FILE demux_8.v
 set_global_assignment -name VERILOG_FILE mux_16_4inputs.v
@@ -95,14 +103,7 @@ set_global_assignment -name VERILOG_FILE regCID.v
 set_global_assignment -name VERILOG_FILE mux_32.v
 set_global_assignment -name HEX_FILE multicore_code.hex
 set_global_assignment -name HEX_FILE multicore_data.hex
-set_location_assignment PIN_E22 -to o_busy_2
-set_location_assignment PIN_E25 -to o_busy_3
-set_location_assignment PIN_E24 -to o_busy_4
-set_location_assignment PIN_E21 -to o_busy_1
 set_global_assignment -name VERILOG_FILE clock_divider.v
 set_global_assignment -name VERILOG_FILE top_dummy.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VERILOG_FILE regPC.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

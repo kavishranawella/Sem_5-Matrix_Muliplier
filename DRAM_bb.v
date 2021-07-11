@@ -78,14 +78,14 @@ endmodule
 // Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "1"
 // Retrieval info: PRIVATE: JTAG_ID STRING "dram"
 // Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
-// Retrieval info: PRIVATE: MIFfilename STRING "multicore_data.hex"
+// Retrieval info: PRIVATE: MIFfilename STRING "data_test_4.hex"
 // Retrieval info: PRIVATE: NUMWORDS_A NUMERIC "65536"
 // Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
 // Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_A NUMERIC "3"
 // Retrieval info: PRIVATE: RegAddr NUMERIC "1"
 // Retrieval info: PRIVATE: RegData NUMERIC "1"
 // Retrieval info: PRIVATE: RegOutput NUMERIC "0"
-// Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
+// Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "1"
 // Retrieval info: PRIVATE: SingleClock NUMERIC "1"
 // Retrieval info: PRIVATE: UseDQRAM NUMERIC "1"
 // Retrieval info: PRIVATE: WRCONTROL_ACLR_A NUMERIC "0"
@@ -95,7 +95,7 @@ endmodule
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 // Retrieval info: CONSTANT: CLOCK_ENABLE_INPUT_A STRING "BYPASS"
 // Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_A STRING "BYPASS"
-// Retrieval info: CONSTANT: INIT_FILE STRING "multicore_data.hex"
+// Retrieval info: CONSTANT: INIT_FILE STRING "data_test_4.hex"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 // Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=dram"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
@@ -126,4 +126,5 @@ endmodule
 // Retrieval info: GEN_FILE: TYPE_NORMAL DRAM.bsf FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL DRAM_inst.v TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL DRAM_bb.v TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL DRAM_syn.v TRUE
 // Retrieval info: LIB_FILE: altera_mf
