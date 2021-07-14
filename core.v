@@ -121,7 +121,7 @@ control_unit CU (.clk(i_clk), .instruction(instruction), .zflag(zflag), .start_s
 						.busy_sig(o_busy), .mux_sig(mux_sig), .load_decode_sig(load_decode_sig), 
 						.alu_sig(alu_control), .rst_PC(rst_PC), .inc_decode_sig(inc_decode_sig), 
 						.clear_ac(clear_AC), .dec_ac(dec_AC), .iram_read(o_iram_read), 
-						.iram_write(o_iram_write), .dram_read(o_dram_read), .dram_write(o_dram_write), .noc(mux_in_NOC));
+						.iram_write(o_iram_write), .dram_read(o_dram_read), .dram_write(o_dram_write), .noc(mux_in_NOC[2:0]));
 
 assign dummy_16 = 16'b0000000000000000; 
 assign dummy_8 = 8'b00000000;

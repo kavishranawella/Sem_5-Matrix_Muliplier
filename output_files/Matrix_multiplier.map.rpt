@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Matrix_multiplier
-Sun Jul 11 18:24:07 2021
+Wed Jul 14 12:18:36 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -56,18 +56,13 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  48. Parameter Settings for Inferred Entity Instance: core:core4|ALU:ALU_ins|lpm_mult:Mult0
  49. altsyncram Parameter Settings by Entity Instance
  50. lpm_mult Parameter Settings by Entity Instance
- 51. Port Connectivity Checks: "core:core4|control_unit:CU"
- 52. Port Connectivity Checks: "core:core4"
- 53. Port Connectivity Checks: "core:core3|control_unit:CU"
- 54. Port Connectivity Checks: "core:core3"
- 55. Port Connectivity Checks: "core:core2|control_unit:CU"
- 56. Port Connectivity Checks: "core:core2"
- 57. Port Connectivity Checks: "core:core1|control_unit:CU"
- 58. Port Connectivity Checks: "memory_control_unit:MCU|memory_control_unit_state:state"
- 59. Post-Synthesis Netlist Statistics for Top Partition
- 60. Elapsed Time Per Partition
- 61. Analysis & Synthesis Messages
- 62. Analysis & Synthesis Suppressed Messages
+ 51. Port Connectivity Checks: "core:core4"
+ 52. Port Connectivity Checks: "core:core3"
+ 53. Port Connectivity Checks: "core:core2"
+ 54. Post-Synthesis Netlist Statistics for Top Partition
+ 55. Elapsed Time Per Partition
+ 56. Analysis & Synthesis Messages
+ 57. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -93,7 +88,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jul 11 18:24:07 2021       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 14 12:18:36 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Matrix_multiplier                           ;
 ; Top-level Entity Name              ; top                                         ;
@@ -2286,15 +2281,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+---------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "core:core4|control_unit:CU"                                                                                                                                                     ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; noc  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (3 bits) it drives.  The 5 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "core:core4"                                                                                 ;
 +--------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -2308,15 +2294,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; o_iram_out   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; o_noc        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +--------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "core:core3|control_unit:CU"                                                                                                                                                     ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; noc  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (3 bits) it drives.  The 5 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------+
@@ -2334,15 +2311,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "core:core2|control_unit:CU"                                                                                                                                                     ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; noc  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (3 bits) it drives.  The 5 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "core:core2"                                                                                 ;
 +--------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -2356,24 +2324,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; o_iram_out   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; o_noc        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +--------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "core:core1|control_unit:CU"                                                                                                                                                     ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; noc  ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (3 bits) it drives.  The 5 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "memory_control_unit:MCU|memory_control_unit_state:state"                                                                                   ;
-+------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                     ;
-+------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
-; noc  ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "noc[3..3]" will be connected to GND. ;
-+------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -2412,7 +2362,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:09     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -2422,9 +2372,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Jul 11 18:23:36 2021
+    Info: Processing started: Wed Jul 14 12:18:21 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Matrix_multiplier -c Matrix_multiplier
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file alu_tb.v
+    Info (12023): Found entity 1: ALU_tb File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/ALU_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file dram_module.v
     Info (12023): Found entity 1: DRAM_module File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/DRAM_module.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file iram_module.v
@@ -2621,7 +2573,6 @@ Info (12133): Instantiated megafunction "core:core1|ALU:ALU_ins|lpm_mult:Mult0" 
     Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_7dt.tdf
     Info (12023): Found entity 1: mult_7dt File: D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/db/mult_7dt.tdf Line: 28
-Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 61 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file D:/Academics/FPGA-Matrix_Multiplier/Verilog_modules/Sem_5-Matrix_Muliplier/output_files/Matrix_multiplier.map.smsg
@@ -2633,11 +2584,11 @@ Info (21057): Implemented 4308 device resources after synthesis - the final reso
     Info (21061): Implemented 4278 logic cells
     Info (21064): Implemented 16 RAM segments
     Info (21062): Implemented 8 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4812 megabytes
-    Info: Processing ended: Sun Jul 11 18:24:07 2021
-    Info: Elapsed time: 00:00:31
-    Info: Total CPU time (on all processors): 00:00:53
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4808 megabytes
+    Info: Processing ended: Wed Jul 14 12:18:36 2021
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:27
 
 
 +------------------------------------------+

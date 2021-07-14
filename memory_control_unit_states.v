@@ -3,7 +3,7 @@ module memory_control_unit_state(clk, read, write, noc, mux_address_sig,
 
 input clk; 
 input [1:0] read, write;
-input [3:0] noc;
+input [2:0] noc;
 output reg [1:0] mux_address_sig, mux_data_in_sig;
 output reg [3:0] mux_data_out_sig;
 
