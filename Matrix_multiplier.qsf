@@ -60,8 +60,6 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_top -section_id tb_top
 set_global_assignment -name EDA_TEST_BENCH_NAME tb_test -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_test
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_test -section_id tb_test
-set_global_assignment -name EDA_TEST_BENCH_FILE tb_top.v -section_id tb_top
-set_global_assignment -name EDA_TEST_BENCH_FILE tb_test.v -section_id tb_test
 set_location_assignment PIN_E22 -to o_busy_2
 set_location_assignment PIN_E25 -to o_busy_3
 set_location_assignment PIN_E24 -to o_busy_4
@@ -69,6 +67,7 @@ set_location_assignment PIN_E21 -to o_busy_1
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE ALU_tb.v
 set_global_assignment -name VERILOG_FILE DRAM_module.v
 set_global_assignment -name VERILOG_FILE IRAM_module.v
 set_global_assignment -name VERILOG_FILE memory_control_unit_states.v
@@ -111,4 +110,10 @@ set_global_assignment -name VERILOG_FILE regPC.v
 set_global_assignment -name SOURCE_FILE iram.mem
 set_global_assignment -name SOURCE_FILE DRAM_out.mem
 set_global_assignment -name SOURCE_FILE dram.mem
+set_global_assignment -name EDA_TEST_BENCH_FILE tb_top.v -section_id tb_top
+set_global_assignment -name EDA_TEST_BENCH_FILE tb_test.v -section_id tb_test
+set_global_assignment -name EDA_TEST_BENCH_NAME ALU_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id ALU_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME ALU_tb -section_id ALU_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE ALU_tb.v -section_id ALU_tb
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
